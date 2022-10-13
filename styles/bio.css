@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.eot");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.eot");
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.eot");
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/*-----------------------All--------------------*/
+* {
+  font-family: "AvenirNext LT Pro", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*--------------------Header-----------------------*/
+.header {
+  background-color: #323232;
+  max-width: 100%;
+}
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__logo-wrapper {
+  max-width: 120px;
+  max-height: 20px;
+}
+.header__nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header__nav-link-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav-link {
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+}/*# sourceMappingURL=bio.css.map */
