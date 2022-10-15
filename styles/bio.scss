@@ -275,8 +275,8 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 50%;
-      justify-content: space-between;
+      max-width: 60%;
+      gap: 13%;
       align-items: flex-end;
     }
   }
@@ -294,13 +294,14 @@
   }
   &__socials-container {
     display: flex;
-    width: 40%;
+    width: 30%;
     justify-content: space-between;
     margin-bottom: 24px;
     @include tablet {
       margin: 0;
       margin-bottom: 6px;
       width: 30%;
+      gap: 40px;
     }
   }
   &__socials-icon {
@@ -309,6 +310,7 @@
       height: 25px;
     }
   }
+
   &__people-container {
     display: flex;
     flex-direction: column;
