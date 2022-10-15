@@ -31,7 +31,7 @@
   }
 
   &__logo {
-    width: 150px;
+    width: 180px;
     padding-top: 24px;
     padding-bottom: 16px;
   }
@@ -73,10 +73,14 @@
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
   background-size: cover;
-  height: 40vh;
+  height: 30vh;
+  background-color: rgba(21, 21, 21, 0.447);
+  background-blend-mode: saturation;
   @include tablet {
-    height: 90vh;
+    height: 70vh;
     background-size: cover;
+    background-color: rgba(71, 71, 71, 0.635);
+    background-blend-mode: saturation;
   }
 
   &__wrapper {
@@ -86,14 +90,13 @@
     justify-content: flex-start;
   }
   &__title {
-    font-size: 30px;
+    font-size: 35px;
     color: white;
     font-weight: 600;
-    margin-left: 16px;
-    letter-spacing: 0.7px;
+    margin-left: 24px;
     @include tablet {
-      margin-left: 36px;
-      font-size: 70px;
+      margin-left: 52px;
+      font-size: 80px;
     }
   }
 }
@@ -105,17 +108,18 @@
   flex-direction: column;
   align-items: flex-start;
   @include tablet {
-    padding: 36px;
+    padding: 52px;
   }
   &__title {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 600;
-    margin-left: 16px;
-    letter-spacing: 0.7px;
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-left: 24px;
+    margin-top: 30px;
+    color: $bandsite-black;
+
     @include tablet {
       margin: 0;
+      font-size: 52px;
     }
     &__content-wrapper {
       @include tablet {
@@ -123,33 +127,55 @@
       }
     }
   }
-  &__band-image {
-    max-width: 100%;
-    padding: 16px;
+  &__band-image-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
     @include tablet {
-      padding: 0 56px;
+      padding-top: 8px;
+    }
+  }
+  &__band-image {
+    width: 100%;
+    padding: 24px;
+    @include tablet {
+      padding: 0 90px;
+      clip-path: inset(30px 0);
     }
   }
   &__quote {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 600;
-    padding: 16px;
+    margin: 0 24px;
+    line-height: 1.7;
     @include tablet {
-      padding: 0 56px;
+      margin: 0 90px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: $bandsite-black;
     }
   }
   &__quote-speaker {
+    font-size: 21px;
     margin-bottom: 32px;
     font-weight: 600;
-    padding: 16px;
+    margin: 12px 24px;
+    line-height: 1.7;
     @include tablet {
-      padding: 0 56px;
+      margin: 12px 90px;
+      font-weight: 700;
+      font-size: 25px;
     }
   }
   &__bio-title {
-    padding-left: 16px;
+    margin: 32px 24px 0 24px;
+    font-size: 20px;
+    font-weight: 600;
     @include tablet {
-      padding: 0 56px;
+      margin: 70px 90px 12px 90px;
+      font-weight: 700;
+      font-size: 35px;
     }
   }
 
@@ -157,48 +183,61 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 24px;
     @include tablet {
       flex-direction: row;
-      padding: 0 40px;
+      margin: 0 90px;
+      gap: 28px;
     }
   }
 
   &__bio {
-    padding: 16px;
     width: 100%;
+    margin: 10px 0;
+    line-height: 1.5;
+    font-size: 18px;
+    @include tablet {
+      line-height: 1.8;
+      font-weight: 400;
+      font-size: 20px;
+    }
   }
 }
 
 /*-------------------Photo Gallery-----------------------*/
 
 .photos {
+  background-color: $alabaster;
   &__container {
   }
 
   &__title {
-    padding: 16px;
+    padding: 24px;
+    font-size: 35px;
+    font-weight: 600;
     @include tablet {
-      padding: 36px;
+      padding: 80px 52px 0 52px;
+      font-size: 52px;
+      color: $bandsite-black;
     }
   }
   &__images-container {
     display: flex;
     flex-direction: column;
+    padding: 24px;
+    gap: 24px;
     @include tablet {
       flex-direction: row;
       flex-wrap: wrap;
       margin: auto;
-      padding: 36px;
-      gap: 16px;
+      padding: 30px 52px 52px 52px;
+      gap: 34px;
       justify-content: space-between;
     }
   }
   &__image {
     width: 100%;
     height: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 16px;
     @include tablet {
       width: 30%;
       padding: 0;
@@ -211,25 +250,32 @@
 
 .footer {
   background-color: $bandsite-black;
-  padding: 24px 16px;
+  padding: 24px;
   @include tablet {
     position: relative;
+    padding: 52px;
   }
 
   &__headings-container {
     @include tablet {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      width: 50%;
+      justify-content: space-between;
     }
   }
 
   &__title {
     color: white;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
-    letter-spacing: 0.7px;
     padding-bottom: 24px;
     width: auto;
+    @include tablet {
+      font-size: 52px;
+      padding-bottom: 0;
+    }
   }
   &__socials-container {
     display: flex;
@@ -238,10 +284,11 @@
     margin-bottom: 24px;
     @include tablet {
       margin: 0;
+      width: 30%;
     }
   }
   &__socials-icon {
-    height: 30px;
+    height: 35px;
   }
   &__people-container {
     display: flex;
@@ -262,12 +309,14 @@
   &__name-text {
     color: white;
     font-weight: 600;
+    font-size: 18px;
   }
   &__location {
-    padding: 16px 0;
+    padding: 24px 0;
     color: white;
   }
   &__location-text {
+    font-size: 18px;
   }
   &__email {
     margin-bottom: 24px;
@@ -275,11 +324,14 @@
   &__email-text {
     text-decoration: none;
     color: white;
+    font-size: 18px;
   }
   &__logo {
     margin-top: 48px;
+    width: 180px;
     @include tablet {
       position: absolute;
+      margin-right: 52px;
       top: 0;
       right: 0;
     }

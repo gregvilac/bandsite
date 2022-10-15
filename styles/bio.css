@@ -9,15 +9,15 @@
 @font-face {
   font-family: "AvenirNext LT Pro";
   src: url("../assets/fonts/AvenirNextLTPro-Demi.eot");
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "AvenirNext LT Pro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.eot");
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold") format("svg");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold") format("svg");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -52,7 +52,7 @@
   }
 }
 .header__logo {
-  width: 150px;
+  width: 180px;
   padding-top: 24px;
   padding-bottom: 16px;
 }
@@ -97,12 +97,16 @@
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
   background-size: cover;
-  height: 40vh;
+  height: 30vh;
+  background-color: rgba(21, 21, 21, 0.447);
+  background-blend-mode: saturation;
 }
 @media (min-width: 768px) {
   .hero {
-    height: 90vh;
+    height: 70vh;
     background-size: cover;
+    background-color: rgba(71, 71, 71, 0.635);
+    background-blend-mode: saturation;
   }
 }
 .hero__wrapper {
@@ -112,16 +116,15 @@
   justify-content: flex-start;
 }
 .hero__title {
-  font-size: 30px;
+  font-size: 35px;
   color: white;
   font-weight: 600;
-  margin-left: 16px;
-  letter-spacing: 0.7px;
+  margin-left: 24px;
 }
 @media (min-width: 768px) {
   .hero__title {
-    margin-left: 36px;
-    font-size: 70px;
+    margin-left: 52px;
+    font-size: 80px;
   }
 }
 
@@ -133,20 +136,20 @@
 }
 @media (min-width: 768px) {
   .info {
-    padding: 36px;
+    padding: 52px;
   }
 }
 .info__title {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 600;
-  margin-left: 16px;
-  letter-spacing: 0.7px;
-  margin-top: 24px;
-  margin-bottom: 16px;
+  margin-left: 24px;
+  margin-top: 30px;
+  color: #323232;
 }
 @media (min-width: 768px) {
   .info__title {
     margin: 0;
+    font-size: 52px;
   }
 }
 @media (min-width: 768px) {
@@ -154,88 +157,130 @@
     padding: 0 800px;
   }
 }
+.info__band-image-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+@media (min-width: 768px) {
+  .info__band-image-container {
+    padding-top: 8px;
+  }
+}
 .info__band-image {
-  max-width: 100%;
-  padding: 16px;
+  width: 100%;
+  padding: 24px;
 }
 @media (min-width: 768px) {
   .info__band-image {
-    padding: 0 56px;
+    padding: 0 90px;
+    -webkit-clip-path: inset(30px 0);
+            clip-path: inset(30px 0);
   }
 }
 .info__quote {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 600;
-  padding: 16px;
+  margin: 0 24px;
+  line-height: 1.7;
 }
 @media (min-width: 768px) {
   .info__quote {
-    padding: 0 56px;
+    margin: 0 90px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #323232;
   }
 }
 .info__quote-speaker {
+  font-size: 21px;
   margin-bottom: 32px;
   font-weight: 600;
-  padding: 16px;
+  margin: 12px 24px;
+  line-height: 1.7;
 }
 @media (min-width: 768px) {
   .info__quote-speaker {
-    padding: 0 56px;
+    margin: 12px 90px;
+    font-weight: 700;
+    font-size: 25px;
   }
 }
 .info__bio-title {
-  padding-left: 16px;
+  margin: 32px 24px 0 24px;
+  font-size: 20px;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .info__bio-title {
-    padding: 0 56px;
+    margin: 70px 90px 12px 90px;
+    font-weight: 700;
+    font-size: 35px;
   }
 }
 .info__bio-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 24px;
 }
 @media (min-width: 768px) {
   .info__bio-container {
     flex-direction: row;
-    padding: 0 40px;
+    margin: 0 90px;
+    gap: 28px;
   }
 }
 .info__bio {
-  padding: 16px;
   width: 100%;
+  margin: 10px 0;
+  line-height: 1.5;
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .info__bio {
+    line-height: 1.8;
+    font-weight: 400;
+    font-size: 20px;
+  }
 }
 
 /*-------------------Photo Gallery-----------------------*/
+.photos {
+  background-color: #fafafa;
+}
 .photos__title {
-  padding: 16px;
+  padding: 24px;
+  font-size: 35px;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .photos__title {
-    padding: 36px;
+    padding: 80px 52px 0 52px;
+    font-size: 52px;
+    color: #323232;
   }
 }
 .photos__images-container {
   display: flex;
   flex-direction: column;
+  padding: 24px;
+  gap: 24px;
 }
 @media (min-width: 768px) {
   .photos__images-container {
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
-    padding: 36px;
-    gap: 16px;
+    padding: 30px 52px 52px 52px;
+    gap: 34px;
     justify-content: space-between;
   }
 }
 .photos__image {
   width: 100%;
   height: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
 }
 @media (min-width: 768px) {
   .photos__image {
@@ -248,26 +293,35 @@
 /*-------------------Footer--------------------*/
 .footer {
   background-color: #323232;
-  padding: 24px 16px;
+  padding: 24px;
 }
 @media (min-width: 768px) {
   .footer {
     position: relative;
+    padding: 52px;
   }
 }
 @media (min-width: 768px) {
   .footer__headings-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
   }
 }
 .footer__title {
   color: white;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
-  letter-spacing: 0.7px;
   padding-bottom: 24px;
   width: auto;
+}
+@media (min-width: 768px) {
+  .footer__title {
+    font-size: 52px;
+    padding-bottom: 0;
+  }
 }
 .footer__socials-container {
   display: flex;
@@ -278,10 +332,11 @@
 @media (min-width: 768px) {
   .footer__socials-container {
     margin: 0;
+    width: 30%;
   }
 }
 .footer__socials-icon {
-  height: 30px;
+  height: 35px;
 }
 .footer__people-container {
   display: flex;
@@ -304,10 +359,14 @@
 .footer__name-text {
   color: white;
   font-weight: 600;
+  font-size: 18px;
 }
 .footer__location {
-  padding: 16px 0;
+  padding: 24px 0;
   color: white;
+}
+.footer__location-text {
+  font-size: 18px;
 }
 .footer__email {
   margin-bottom: 24px;
@@ -315,13 +374,16 @@
 .footer__email-text {
   text-decoration: none;
   color: white;
+  font-size: 18px;
 }
 .footer__logo {
   margin-top: 48px;
+  width: 180px;
 }
 @media (min-width: 768px) {
   .footer__logo {
     position: absolute;
+    margin-right: 52px;
     top: 0;
     right: 0;
   }
