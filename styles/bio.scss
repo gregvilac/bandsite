@@ -21,12 +21,12 @@
     @include tablet {
       flex-direction: row;
       justify-content: flex-start;
-      padding: 16px;
     }
   }
   &__logo-wrapper {
     @include tablet {
-      padding: 0 36px;
+      padding-left: 40px;
+      padding-right: 70px;
     }
   }
 
@@ -34,6 +34,10 @@
     width: 180px;
     padding-top: 24px;
     padding-bottom: 16px;
+    @include tablet {
+      width: 120px;
+      padding-top: 16px;
+    }
   }
 
   &__nav-wrapper {
@@ -42,6 +46,7 @@
     width: 100%;
     @include tablet {
       justify-content: flex-start;
+      gap: 70px;
     }
   }
   &__nav-link-container {
@@ -50,10 +55,15 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+
     @include tablet {
+      padding: 30px 0;
       justify-content: flex-start;
       width: auto;
     }
+  }
+  &__nav-link-container--active {
+    border-bottom: 4px solid white;
   }
   &__nav-link {
     font-size: 18px;
@@ -62,9 +72,13 @@
     color: $white;
     padding-bottom: 16px;
     @include tablet {
+      font-size: 14px;
       padding-bottom: 0;
-      margin: 0 36px;
+      margin: 0;
     }
+  }
+  &__nav-link--active {
+    font-weight: 600;
   }
 }
 
@@ -77,9 +91,9 @@
   background-color: rgba(21, 21, 21, 0.447);
   background-blend-mode: saturation;
   @include tablet {
-    height: 70vh;
+    height: 60vh;
     background-size: cover;
-    background-color: rgba(71, 71, 71, 0.635);
+    background-color: rgba(36, 36, 36, 0.432);
     background-blend-mode: saturation;
   }
 
@@ -95,8 +109,8 @@
     font-weight: 600;
     margin-left: 24px;
     @include tablet {
-      margin-left: 52px;
-      font-size: 80px;
+      margin-left: 40px;
+      font-size: 60px;
     }
   }
 }
@@ -108,7 +122,7 @@
   flex-direction: column;
   align-items: flex-start;
   @include tablet {
-    padding: 52px;
+    padding: 40px;
   }
   &__title {
     font-size: 34px;
@@ -119,11 +133,10 @@
 
     @include tablet {
       margin: 0;
-      font-size: 52px;
+      font-size: 40px;
     }
     &__content-wrapper {
       @include tablet {
-        padding: 0 800px;
       }
     }
   }
@@ -133,13 +146,14 @@
     padding: 10px 0;
     @include tablet {
       padding-top: 8px;
+      padding-bottom: 0;
     }
   }
   &__band-image {
     width: 100%;
     padding: 24px;
     @include tablet {
-      padding: 0 90px;
+      padding: 0 60px;
       clip-path: inset(30px 0);
     }
   }
@@ -149,9 +163,9 @@
     margin: 0 24px;
     line-height: 1.7;
     @include tablet {
-      margin: 0 90px;
-      font-size: 30px;
-      font-weight: 700;
+      margin: 0 60px;
+      font-size: 22px;
+      font-weight: 600;
       line-height: 1.5;
       color: $bandsite-black;
     }
@@ -163,9 +177,9 @@
     margin: 12px 24px;
     line-height: 1.7;
     @include tablet {
-      margin: 12px 90px;
-      font-weight: 700;
-      font-size: 25px;
+      margin: 12px 60px;
+      font-weight: 600;
+      font-size: 16px;
     }
   }
   &__bio-title {
@@ -173,9 +187,9 @@
     font-size: 20px;
     font-weight: 600;
     @include tablet {
-      margin: 70px 90px 12px 90px;
-      font-weight: 700;
-      font-size: 35px;
+      margin: 50px 60px 12px 60px;
+      font-weight: 600;
+      font-size: 22px;
     }
   }
 
@@ -186,7 +200,7 @@
     margin: 24px;
     @include tablet {
       flex-direction: row;
-      margin: 0 90px;
+      margin: 0 60px;
       gap: 28px;
     }
   }
@@ -199,7 +213,7 @@
     @include tablet {
       line-height: 1.8;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 14px;
     }
   }
 }
@@ -216,8 +230,8 @@
     font-size: 35px;
     font-weight: 600;
     @include tablet {
-      padding: 80px 52px 0 52px;
-      font-size: 52px;
+      padding: 40px 40px 0 40px;
+      font-size: 40px;
       color: $bandsite-black;
     }
   }
@@ -230,8 +244,8 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin: auto;
-      padding: 30px 52px 52px 52px;
-      gap: 34px;
+      padding: 30px 40px 52px 40px;
+      gap: 25px;
       justify-content: space-between;
     }
   }
@@ -253,7 +267,7 @@
   padding: 24px;
   @include tablet {
     position: relative;
-    padding: 52px;
+    padding: 40px;
   }
 
   &__headings-container {
@@ -263,6 +277,7 @@
       align-items: center;
       width: 50%;
       justify-content: space-between;
+      align-items: flex-end;
     }
   }
 
@@ -273,7 +288,7 @@
     padding-bottom: 24px;
     width: auto;
     @include tablet {
-      font-size: 52px;
+      font-size: 34px;
       padding-bottom: 0;
     }
   }
@@ -284,11 +299,15 @@
     margin-bottom: 24px;
     @include tablet {
       margin: 0;
+      margin-bottom: 6px;
       width: 30%;
     }
   }
   &__socials-icon {
     height: 35px;
+    @include tablet {
+      height: 25px;
+    }
   }
   &__people-container {
     display: flex;
@@ -296,6 +315,7 @@
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
+      margin-top: 30px;
     }
   }
   &__people-card {
@@ -310,6 +330,9 @@
     color: white;
     font-weight: 600;
     font-size: 18px;
+    @include tablet {
+      font-size: 14px;
+    }
   }
   &__location {
     padding: 24px 0;
@@ -317,6 +340,9 @@
   }
   &__location-text {
     font-size: 18px;
+    @include tablet {
+      font-size: 14px;
+    }
   }
   &__email {
     margin-bottom: 24px;
@@ -325,12 +351,16 @@
     text-decoration: none;
     color: white;
     font-size: 18px;
+    @include tablet {
+      font-size: 14px;
+    }
   }
   &__logo {
     margin-top: 48px;
     width: 180px;
     @include tablet {
       position: absolute;
+      width: 120px;
       margin-right: 52px;
       top: 0;
       right: 0;
@@ -339,7 +369,7 @@
   &__copyright {
     color: white;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     padding: 16px 0;
   }
 }
