@@ -45,6 +45,12 @@
     justify-content: flex-start;
   }
 }
+@media screen and (min-width: 1280px) {
+  .header__wrapper {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
 @media screen and (min-width: 768px) {
   .header__logo-wrapper {
     padding-left: 40px;
@@ -130,6 +136,12 @@
   align-items: center;
   justify-content: flex-start;
 }
+@media screen and (min-width: 1280px) {
+  .hero__wrapper {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
 .hero__title {
   font-size: 35px;
   color: white;
@@ -154,6 +166,12 @@
     padding: 40px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .info {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
 .info__title {
   font-size: 34px;
   font-weight: 600;
@@ -174,8 +192,7 @@
 }
 @media screen and (min-width: 768px) {
   .info__band-image-container {
-    padding-top: 8px;
-    padding-bottom: 0;
+    padding: 0;
   }
 }
 .info__band-image {
@@ -261,6 +278,12 @@
 .photos {
   background-color: #fafafa;
 }
+@media screen and (min-width: 1280px) {
+  .photos__container {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
 .photos__title {
   padding: 24px;
   font-size: 35px;
@@ -305,48 +328,53 @@
 .footer {
   background-color: #323232;
   padding: 24px;
+  position: relative;
+  max-width: 100%;
 }
 @media screen and (min-width: 768px) {
   .footer {
-    position: relative;
-    padding: 40px;
+    padding: 30px 40px 40px 40px;
   }
 }
-@media screen and (min-width: 768px) {
-  .footer__headings-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 60%;
-    gap: 13%;
-    align-items: flex-end;
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__wrapper {
+    padding: 30px 40px 40px 40px;
+    max-width: 1280px;
+    margin: auto;
   }
 }
 .footer__title {
   color: white;
   font-size: 35px;
   font-weight: 600;
-  padding-bottom: 24px;
+  padding-bottom: 75px;
   width: auto;
 }
 @media screen and (min-width: 768px) {
   .footer__title {
     font-size: 34px;
-    padding-bottom: 0;
+    padding-bottom: 24px;
   }
 }
 .footer__socials-container {
+  flex: 1;
+  width: 100%;
+  padding-top: 5px;
   display: flex;
-  width: 30%;
-  justify-content: space-between;
-  margin-bottom: 24px;
+  justify-content: flex-start;
+  gap: 30px;
+  position: absolute;
+  top: 80px;
 }
 @media screen and (min-width: 768px) {
   .footer__socials-container {
-    margin: 0;
-    margin-bottom: 6px;
-    width: 30%;
-    gap: 40px;
+    position: relative;
+    top: 0px;
   }
 }
 .footer__socials-icon {
@@ -357,21 +385,17 @@
     height: 25px;
   }
 }
-.footer__people-container {
+.footer__card-container {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
-  .footer__people-container {
+  .footer__card-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 40px;
     margin-top: 30px;
   }
-}
-.footer__people-card {
-  display: flex;
-  flex-direction: column;
-  margin: 24px 0;
 }
 .footer__name {
   padding-top: 8px;
@@ -411,22 +435,44 @@
     font-size: 14px;
   }
 }
-.footer__logo {
-  margin-top: 48px;
-  width: 180px;
-}
-@media screen and (min-width: 768px) {
-  .footer__logo {
-    position: absolute;
-    width: 120px;
-    margin-right: 52px;
-    top: 0;
-    right: 0;
-  }
-}
 .footer__copyright {
   color: white;
   font-weight: 400;
   font-size: 14px;
-  padding: 16px 0;
+  margin-top: 70px;
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    padding: 16px 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+.footer__logo {
+  position: absolute;
+  bottom: 30px;
+  width: 150px;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    margin-left: auto;
+    padding-top: 4px;
+    flex: 1;
+    position: absolute;
+    right: 25px;
+    top: 33px;
+    width: 120px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__logo {
+    position: relative;
+  }
 }/*# sourceMappingURL=bio.css.map */
