@@ -354,9 +354,6 @@
     @include tablet {
       height: 1.5625rem;
     }
-    &:hover {
-      stroke: magenta;
-    }
   }
 
   &__card-container {

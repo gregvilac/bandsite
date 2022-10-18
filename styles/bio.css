@@ -429,9 +429,6 @@
     height: 1.5625rem;
   }
 }
-.footer__socials-icon:hover {
-  stroke: magenta;
-}
 .footer__card-container {
   display: flex;
   flex-direction: column;
