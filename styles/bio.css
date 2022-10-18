@@ -118,6 +118,166 @@
   font-weight: 600;
 }
 
+/*-------------------Footer--------------------*/
+.footer {
+  background-color: #323232;
+  padding: 1.5rem;
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 0;
+  }
+}
+.footer__wrapper {
+  position: relative;
+}
+@media screen and (min-width: 1280px) {
+  .footer__wrapper {
+    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+.footer__title {
+  color: white;
+  font-size: 2.1875rem;
+  font-weight: 600;
+  padding-bottom: 5rem;
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .footer__title {
+    font-size: 2.125rem;
+    padding-bottom: 1.5rem;
+  }
+}
+.footer__socials-container {
+  flex: 1;
+  width: 100%;
+  padding-top: 0.3125rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.875rem;
+  position: absolute;
+  top: 3.75rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__socials-container {
+    position: relative;
+    top: 0px;
+  }
+}
+.footer__socials-icon {
+  height: 2.1875rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__socials-icon {
+    height: 1.5625rem;
+  }
+}
+.footer__card-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer__card-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    margin-top: 1.875rem;
+  }
+}
+.footer__name {
+  padding-top: 0.5rem;
+}
+.footer__name-text {
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__name-text {
+    font-size: 0.875rem;
+  }
+}
+.footer__location {
+  padding: 1.5rem 0;
+  color: white;
+}
+.footer__location-text {
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__location-text {
+    font-size: 0.875rem;
+  }
+}
+.footer__email {
+  margin-bottom: 1.5rem;
+}
+.footer__email-text {
+  text-decoration: none;
+  color: white;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__email-text {
+    font-size: 0.875rem;
+  }
+}
+.footer__email-text:hover {
+  color: magenta;
+}
+.footer__copyright {
+  color: white;
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding-top: 4.375rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    padding: 1rem 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+.footer__logo {
+  position: absolute;
+  top: 22.5rem;
+  width: 9.375rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    margin-left: auto;
+    padding-top: 0.25rem;
+    flex: 1;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 7.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__logo {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.875rem;
+  }
+}
+
 /* -------------------Hero Section---------------  */
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
@@ -363,165 +523,5 @@
 @media screen and (min-width: 1280px) {
   .photos__image:hover {
     filter: grayscale(0%);
-  }
-}
-
-/*-------------------Footer--------------------*/
-.footer {
-  background-color: #323232;
-  padding: 1.5rem;
-  max-width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .footer {
-    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .footer {
-    padding: 0;
-  }
-}
-.footer__wrapper {
-  position: relative;
-}
-@media screen and (min-width: 1280px) {
-  .footer__wrapper {
-    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
-    max-width: 1100px;
-    margin: auto;
-  }
-}
-.footer__title {
-  color: white;
-  font-size: 2.1875rem;
-  font-weight: 600;
-  padding-bottom: 5rem;
-  width: auto;
-}
-@media screen and (min-width: 768px) {
-  .footer__title {
-    font-size: 2.125rem;
-    padding-bottom: 1.5rem;
-  }
-}
-.footer__socials-container {
-  flex: 1;
-  width: 100%;
-  padding-top: 0.3125rem;
-  display: flex;
-  justify-content: flex-start;
-  gap: 1.875rem;
-  position: absolute;
-  top: 3.75rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__socials-container {
-    position: relative;
-    top: 0px;
-  }
-}
-.footer__socials-icon {
-  height: 2.1875rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__socials-icon {
-    height: 1.5625rem;
-  }
-}
-.footer__card-container {
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 768px) {
-  .footer__card-container {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 2.5rem;
-    margin-top: 1.875rem;
-  }
-}
-.footer__name {
-  padding-top: 0.5rem;
-}
-.footer__name-text {
-  color: white;
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__name-text {
-    font-size: 0.875rem;
-  }
-}
-.footer__location {
-  padding: 1.5rem 0;
-  color: white;
-}
-.footer__location-text {
-  font-size: 1.125rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__location-text {
-    font-size: 0.875rem;
-  }
-}
-.footer__email {
-  margin-bottom: 1.5rem;
-}
-.footer__email-text {
-  text-decoration: none;
-  color: white;
-  font-size: 1.125rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__email-text {
-    font-size: 0.875rem;
-  }
-}
-.footer__email-text:hover {
-  color: magenta;
-}
-.footer__copyright {
-  color: white;
-  font-weight: 400;
-  font-size: 0.875rem;
-  padding-top: 4.375rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__copyright {
-    padding: 1rem 0;
-    margin: 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  .footer__card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-}
-.footer__logo {
-  position: absolute;
-  top: 22.5rem;
-  width: 9.375rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__logo {
-    margin-left: auto;
-    padding-top: 0.25rem;
-    flex: 1;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 7.5rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .footer__logo {
-    position: absolute;
-    right: 1.25rem;
-    top: 1.875rem;
   }
 }/*# sourceMappingURL=bio.css.map */

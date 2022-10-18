@@ -1,0 +1,235 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+/*-----------------------All--------------------*/
+
+* {
+  font-family: "AvenirNext LT Pro", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*--------------------Header-----------------------*/
+.header {
+  background-color: $bandsite-black;
+  max-width: 100%;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    @include desktop {
+      max-width: 1100px;
+      margin: auto;
+    }
+  }
+  &__logo-wrapper {
+    @include tablet {
+      padding-left: 2.5rem;
+      padding-right: 4.375rem;
+    }
+  }
+
+  &__logo {
+    width: 11.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    @include tablet {
+      width: 7.5rem;
+      padding-top: 1rem;
+    }
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    @include tablet {
+      justify-content: flex-start;
+      gap: 4.375rem;
+    }
+  }
+  &__nav-link-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    &:hover {
+      border-bottom: 3px solid white;
+    }
+
+    @include tablet {
+      padding: 1.875rem 0;
+      justify-content: flex-start;
+      width: auto;
+    }
+  }
+  &__nav-link-container--active {
+    border-bottom: 3px solid white;
+  }
+  &__nav-link {
+    font-size: 1.125rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: $white;
+    padding-bottom: 1rem;
+    @include tablet {
+      font-size: 0.875rem;
+      padding-bottom: 0;
+      margin: 0;
+    }
+  }
+  &__nav-link--active {
+    font-weight: 600;
+  }
+}
+
+/*-------------------Footer--------------------*/
+
+.footer {
+  background-color: $bandsite-black;
+  padding: 1.5rem;
+  // position: relative;
+  max-width: 100%;
+  @include tablet {
+    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
+  }
+  @include desktop {
+    padding: 0;
+  }
+  &__wrapper {
+    position: relative;
+    @include tablet {
+    }
+    @include desktop {
+      padding: 1.875rem 2.5rem 2.5rem 2.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+  }
+
+  &__title {
+    color: white;
+    font-size: 2.1875rem;
+    font-weight: 600;
+    padding-bottom: 5rem;
+    width: auto;
+    @include tablet {
+      font-size: 2.125rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  &__socials-container {
+    flex: 1;
+    width: 100%;
+    padding-top: 0.3125rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.875rem;
+    position: absolute;
+    top: 3.75rem;
+    @include tablet {
+      position: relative;
+      top: 0px;
+    }
+  }
+  &__socials-icon {
+    height: 2.1875rem;
+    @include tablet {
+      height: 1.5625rem;
+    }
+  }
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 2.5rem;
+      margin-top: 1.875rem;
+    }
+  }
+
+  &__name {
+    padding-top: 0.5rem;
+  }
+  &__name-text {
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    @include tablet {
+      font-size: 0.875rem;
+    }
+  }
+  &__location {
+    padding: 1.5rem 0;
+    color: white;
+  }
+  &__location-text {
+    font-size: 1.125rem;
+    @include tablet {
+      font-size: 0.875rem;
+    }
+  }
+  &__email {
+    margin-bottom: 1.5rem;
+  }
+  &__email-text {
+    text-decoration: none;
+    color: white;
+    font-size: 1.125rem;
+    @include tablet {
+      font-size: 0.875rem;
+    }
+    &:hover {
+      color: magenta;
+    }
+  }
+
+  &__copyright {
+    color: white;
+    font-weight: 400;
+    font-size: 0.875rem;
+    padding-top: 4.375rem;
+    @include tablet {
+      padding: 1rem 0;
+      margin: 0;
+    }
+  }
+
+  &__card {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+  &__logo {
+    position: absolute;
+    top: 22.5rem;
+    width: 9.375rem;
+
+    @include tablet {
+      margin-left: auto;
+      padding-top: 0.25rem;
+      flex: 1;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      width: 7.5rem;
+    }
+    @include desktop {
+      position: absolute;
+      right: 1.25rem;
+      top: 1.875rem;
+    }
+  }
+}
