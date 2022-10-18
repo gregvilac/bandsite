@@ -47,7 +47,7 @@
 }
 @media screen and (min-width: 1280px) {
   .header__wrapper {
-    max-width: 1280px;
+    max-width: 1100px;
     margin: auto;
   }
 }
@@ -138,7 +138,7 @@
 }
 @media screen and (min-width: 1280px) {
   .hero__wrapper {
-    max-width: 1280px;
+    max-width: 1100px;
     margin: auto;
   }
 }
@@ -168,7 +168,7 @@
 }
 @media screen and (min-width: 1280px) {
   .info {
-    max-width: 1280px;
+    max-width: 1100px;
     margin: auto;
   }
 }
@@ -210,6 +210,7 @@
   .info__band-image {
     -webkit-clip-path: inset(50px 0);
             clip-path: inset(50px 0);
+    padding: 0 80px;
   }
 }
 .info__quote {
@@ -227,6 +228,12 @@
     color: #323232;
   }
 }
+@media screen and (min-width: 1280px) {
+  .info__quote {
+    margin: -20px 80px 0 80px;
+    width: 70%;
+  }
+}
 .info__quote-speaker {
   font-size: 21px;
   margin-bottom: 32px;
@@ -241,6 +248,11 @@
     font-size: 16px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .info__quote-speaker {
+    margin: 16px 80px;
+  }
+}
 .info__bio-title {
   margin: 32px 24px 0 24px;
   font-size: 20px;
@@ -251,6 +263,11 @@
     margin: 50px 60px 12px 60px;
     font-weight: 600;
     font-size: 22px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .info__bio-title {
+    margin: 50px 80px 12px 80px;
   }
 }
 .info__bio-container {
@@ -264,6 +281,11 @@
     flex-direction: row;
     margin: 0 60px;
     gap: 28px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .info__bio-container {
+    margin: 0 80px;
   }
 }
 .info__bio {
@@ -286,7 +308,7 @@
 }
 @media screen and (min-width: 1280px) {
   .photos__container {
-    max-width: 1280px;
+    max-width: 1100px;
     margin: auto;
   }
 }
@@ -329,6 +351,14 @@
     flex: 1;
   }
 }
+@media screen and (min-width: 1280px) {
+  .photos__image {
+    filter: grayscale(100%);
+  }
+  .photos__image:hover {
+    filter: grayscale(0%);
+  }
+}
 
 /*-------------------Footer--------------------*/
 .footer {
@@ -352,7 +382,7 @@
 @media screen and (min-width: 1280px) {
   .footer__wrapper {
     padding: 30px 40px 40px 40px;
-    max-width: 1280px;
+    max-width: 1100px;
     margin: auto;
   }
 }
