@@ -429,6 +429,9 @@
     height: 1.5625rem;
   }
 }
+.footer__socials-icon:hover {
+  stroke: magenta;
+}
 .footer__card-container {
   display: flex;
   flex-direction: column;
@@ -478,6 +481,9 @@
   .footer__email-text {
     font-size: 0.875rem;
   }
+}
+.footer__email-text:hover {
+  color: magenta;
 }
 .footer__copyright {
   color: white;
