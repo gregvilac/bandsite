@@ -110,6 +110,11 @@
     margin: 0;
   }
 }
+@media screen and (min-width: 1280px) {
+  .header__nav-link:hover {
+    color: rgb(153, 0, 140);
+  }
+}
 .header__nav-link--active {
   font-weight: 600;
 }
@@ -355,6 +360,8 @@
   .photos__image {
     filter: grayscale(100%);
   }
+}
+@media screen and (min-width: 1280px) {
   .photos__image:hover {
     filter: grayscale(0%);
   }
