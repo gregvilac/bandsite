@@ -282,7 +282,7 @@
 .hero {
   background-image: url("../assets/Images/hero-shows.jpg");
   background-size: cover;
-  height: 30vh;
+  height: 50vh;
   background-color: rgba(21, 21, 21, 0.447);
   background-blend-mode: saturation;
 }
@@ -292,6 +292,13 @@
     background-size: cover;
     background-color: rgba(36, 36, 36, 0.432);
     background-blend-mode: saturation;
+    background-position: left;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    background-position: center;
+    height: 70vh;
   }
 }
 .hero__wrapper {
@@ -300,6 +307,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding: 24px;
+}
+@media screen and (min-width: 768px) {
+  .hero__wrapper {
+    padding: 40px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .hero__wrapper {
@@ -308,33 +321,60 @@
   }
 }
 .hero__album-name {
-  margin-left: 1.5rem;
   color: #fafafa;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .hero__album-name {
+    font-weight: 600;
+    font-size: 24px;
+  }
 }
 .hero__bottom {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  width: 100%;
 }
 @media screen and (min-width: 1280px) {
   .hero__bottom {
     flex-direction: row;
+    align-items: flex-start;
+    gap: 100px;
   }
 }
 .hero__title {
   font-size: 2.1875rem;
   color: white;
   font-weight: 600;
-  margin-left: 1.5rem;
+  width: 70%;
+  line-height: 1.5;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
     font-size: 3.75rem;
-    margin-left: 0;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    padding-top: 10px;
   }
 }
 .hero__song-embed {
-  width: 70%;
-  height: 150px;
+  width: 100%;
+  height: 160px;
+  margin-top: 24px;
+}
+@media screen and (min-width: 768px) {
+  .hero__song-embed {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__song-embed {
+    padding-bottom: 50px;
+    height: 210px;
+  }
 }/*# sourceMappingURL=shows.css.map */
