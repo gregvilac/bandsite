@@ -18,6 +18,9 @@
     background-color: rgba(36, 36, 36, 0.432);
     background-blend-mode: saturation;
   }
+  @include desktop {
+    height: 70vh;
+  }
 
   &__wrapper {
     height: 100%;

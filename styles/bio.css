@@ -294,6 +294,11 @@
     background-blend-mode: saturation;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 70vh;
+  }
+}
 .hero__wrapper {
   height: 100%;
   display: flex;
