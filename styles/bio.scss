@@ -4,7 +4,7 @@
 @use "./partials/mixins" as *;
 @use "./partials/typography" as *;
 
-/* -------------------Hero Section---------------  */
+/* -------------------Bio Hero Section---------------  */
 
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
@@ -41,7 +41,7 @@
   }
 }
 
-/*  ----------------------Info Section-----------------    */
+/*  ----------------------Bio Info Section-----------------    */
 
 .info {
   display: flex;

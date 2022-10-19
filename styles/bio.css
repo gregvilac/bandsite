@@ -278,7 +278,7 @@
   }
 }
 
-/* -------------------Hero Section---------------  */
+/* -------------------Bio Hero Section---------------  */
 .hero {
   background-image: url("../assets/Images/hero-bio.jpg");
   background-size: cover;
@@ -319,7 +319,7 @@
   }
 }
 
-/*  ----------------------Info Section-----------------    */
+/*  ----------------------Bio Info Section-----------------    */
 .info {
   display: flex;
   flex-direction: column;

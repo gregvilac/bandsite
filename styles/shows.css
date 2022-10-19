@@ -1,1 +1,340 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi") format("svg");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.eot");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype"), url("../assets/fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/*-----------------------All--------------------*/
+* {
+  font-family: "AvenirNext LT Pro", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*--------------------Header-----------------------*/
+.header {
+  background-color: #323232;
+  max-width: 100%;
+}
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .header__wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__wrapper {
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__logo-wrapper {
+    padding-left: 2.5rem;
+    padding-right: 4.375rem;
+  }
+}
+.header__logo {
+  width: 11.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 7.5rem;
+    padding-top: 1rem;
+  }
+}
+.header__nav-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .header__nav-wrapper {
+    justify-content: flex-start;
+    gap: 4.375rem;
+  }
+}
+.header__nav-link-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.header__nav-link-container:hover {
+  border-bottom: 3px solid white;
+}
+@media screen and (min-width: 768px) {
+  .header__nav-link-container {
+    padding: 1.875rem 0;
+    justify-content: flex-start;
+    width: auto;
+  }
+}
+.header__nav-link-container--active {
+  border-bottom: 3px solid white;
+}
+.header__nav-link {
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .header__nav-link {
+    font-size: 0.875rem;
+    padding-bottom: 0;
+    margin: 0;
+  }
+}
+.header__nav-link--active {
+  font-weight: 600;
+}
+
+/*-------------------Footer--------------------*/
+.footer {
+  background-color: #323232;
+  padding: 1.5rem;
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 0;
+  }
+}
+.footer__wrapper {
+  position: relative;
+}
+@media screen and (min-width: 1280px) {
+  .footer__wrapper {
+    padding: 1.875rem 2.5rem 2.5rem 2.5rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+.footer__title {
+  color: white;
+  font-size: 2.1875rem;
+  font-weight: 600;
+  padding-bottom: 5rem;
+  width: auto;
+}
+@media screen and (min-width: 768px) {
+  .footer__title {
+    font-size: 2.125rem;
+    padding-bottom: 1.5rem;
+  }
+}
+.footer__socials-container {
+  flex: 1;
+  width: 100%;
+  padding-top: 0.3125rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.875rem;
+  position: absolute;
+  top: 3.75rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__socials-container {
+    position: relative;
+    top: 0px;
+  }
+}
+.footer__socials-icon {
+  height: 2.1875rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__socials-icon {
+    height: 1.5625rem;
+  }
+}
+.footer__card-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer__card-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    margin-top: 1.875rem;
+  }
+}
+.footer__name {
+  padding-top: 0.5rem;
+}
+.footer__name-text {
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__name-text {
+    font-size: 0.875rem;
+  }
+}
+.footer__location {
+  padding: 1.5rem 0;
+  color: white;
+}
+.footer__location-text {
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__location-text {
+    font-size: 0.875rem;
+  }
+}
+.footer__email {
+  margin-bottom: 1.5rem;
+}
+.footer__email-text {
+  text-decoration: none;
+  color: white;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__email-text {
+    font-size: 0.875rem;
+  }
+}
+.footer__email-text:hover {
+  color: magenta;
+}
+.footer__copyright {
+  color: white;
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding-top: 4.375rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    padding: 1rem 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+.footer__logo {
+  position: absolute;
+  top: 22.5rem;
+  width: 9.375rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    margin-left: auto;
+    padding-top: 0.25rem;
+    flex: 1;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 7.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__logo {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.875rem;
+  }
+}
+
+/* -------------------Shows Hero Section---------------  */
+.hero {
+  background-image: url("../assets/Images/hero-shows.jpg");
+  background-size: cover;
+  height: 30vh;
+  background-color: rgba(21, 21, 21, 0.447);
+  background-blend-mode: saturation;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 60vh;
+    background-size: cover;
+    background-color: rgba(36, 36, 36, 0.432);
+    background-blend-mode: saturation;
+  }
+}
+.hero__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media screen and (min-width: 1280px) {
+  .hero__wrapper {
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+.hero__album-name {
+  margin-left: 1.5rem;
+  color: #fafafa;
+  font-weight: 600;
+}
+.hero__bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 1280px) {
+  .hero__bottom {
+    flex-direction: row;
+  }
+}
+.hero__title {
+  font-size: 2.1875rem;
+  color: white;
+  font-weight: 600;
+  margin-left: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 3.75rem;
+    margin-left: 0;
+  }
+}
+.hero__song-embed {
+  width: 70%;
+  height: 150px;
+}/*# sourceMappingURL=shows.css.map */
