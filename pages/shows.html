@@ -56,14 +56,15 @@
     <!-----------------------------Shows Ticket Section-------------------------------->
     <section class="tickets">
       <div class="tickets__wrapper">
-        <h2>Shows</h2>
-        <div class="tickets__shows-container">
+        <h2 class="tickets__title">Shows</h2>
+        <div class="tickets__content">
           <div class="tickets__headings-container">
-            <p>Date</p>
-            <p>Venue</p>
-            <p>Location</p>
+            <p class="tickets__tablet-heading">Date</p>
+            <p class="tickets__tablet-heading">Venue</p>
+            <p class="tickets__tablet-heading">Location</p>
+            <p class="tickets__tablet-heading--hidden">Buy Tickets</p>
           </div>
-          <div class="tickets__show"></div>
+          <ul class="tickets__shows-list"></ul>
         </div>
       </div>
     </section>
@@ -155,5 +156,6 @@
         </h3>
       </div>
     </footer>
+    <script src="../scripts/build-shows-page.js"></script>
   </body>
 </html>

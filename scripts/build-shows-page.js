@@ -30,3 +30,63 @@ let shows = [
     location: "San Francisco, CA",
   },
 ];
+
+function addShows(shows, ul) {
+  ul.innerText = "";
+
+  //set loop for array
+  for (let i = 0; i < shows.length; ++i) {
+    //Create each element for each container
+
+    let dateHeading = document.createElement("h3");
+    dateHeading.classList.add("tickets__show-heading");
+    dateHeading.innerText = "DATE";
+
+    let date = document.createElement("p");
+    date.classList.add("tickets__show-info");
+    date.innerText = shows[i].date;
+
+    let venueHeading = document.createElement("h3");
+    venueHeading.classList.add("tickets__show-heading");
+    venueHeading.innerText = "VENUE";
+
+    let venue = document.createElement("p");
+    venue.classList.add("tickets__show-info");
+    venue.innerText = shows[i].venue;
+
+    let locationHeading = document.createElement("h3");
+    locationHeading.classList.add("tickets__show-heading");
+    locationHeading.innerText = "LOCATION";
+
+    let location = document.createElement("p");
+    location.classList.add("tickets__show-info");
+    location.innerText = shows[i].location;
+
+    let buyTicketsButton = document.createElement("button");
+    buyTicketsButton.classList.add("tickets__buy-button");
+    buyTicketsButton.innerText = "Buy Tickets";
+
+    //Create container for each show. In this case its a list item
+
+    let showLI = document.createElement("li");
+    showLI.classList.add("tickets__show-list-item");
+
+    //append children elements to the showLI
+
+    showLI.appendChild(dateHeading);
+    showLI.appendChild(date);
+    showLI.appendChild(venueHeading);
+    showLI.appendChild(venue);
+    showLI.appendChild(locationHeading);
+    showLI.appendChild(location);
+    showLI.appendChild(buyTicketsButton);
+
+    //append li to container which was passed in as parameter
+
+    ul.appendChild(showLI);
+  }
+}
+
+let showsList = document.querySelector(".tickets__shows-list");
+
+addShows(shows, showsList);

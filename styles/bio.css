@@ -58,7 +58,7 @@
   }
 }
 .header__logo {
-  width: 11.25rem;
+  width: 120px;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -101,7 +101,7 @@
   border-bottom: 3px solid white;
 }
 .header__nav-link {
-  font-size: 1.125rem;
+  font-size: 14px;
   font-weight: 400;
   text-decoration: none;
   color: #ffffff;
