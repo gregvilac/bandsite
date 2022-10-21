@@ -16,6 +16,104 @@ const comments = [
   },
 ];
 
+function displayComments() {
+  const commentsUL = document.querySelector(".comments__list");
+  commentsUL.innerText = "";
+  for (let i = 0; i < comments.length; i++) {
+    //create dynamic elements
+    const commenterName = document.createElement("h3");
+    commenterName.classList.add("comments__commenter-name-text");
+    commenterName.innerText = comments[i].name;
+
+    const commentText = document.createElement("p");
+    commentText.classList.add("comments__comment-text");
+    commentText.innerText = comments[i].text;
+
+    const commentDate = document.createElement("p");
+    commentDate.classList.add("comments__comment-date");
+    commentDate.innerText = comments[i].date;
+
+    //create image element
+    const commenterImage = document.createElement("img");
+    commenterImage.classList.add("comments__commenter-image");
+    commenterImage.setAttribute("src", "../assets/images/Mohan-muruge.jpg");
+
+    //create left div
+    const commentLeftDiv = document.createElement("div");
+    commentLeftDiv.classList.add("comments__comment-left-div");
+
+    //create right div
+
+    const commentRightDiv = document.createElement("div");
+    commentRightDiv.classList.add("comments__comment-right-div");
+
+    //create upper right div
+
+    const commentUpperDiv = document.createElement("div");
+    commentUpperDiv.classList.add("comments__comment-upper-div");
+
+    //create lower right div
+
+    const commentLowerDiv = document.createElement("div");
+    commentLowerDiv.classList.add("comments__comment-lower-div");
+
+    //create li to hold each comment
+
+    const commentListItem = document.createElement("div");
+    commentListItem.classList.add("comments__comment-list-item");
+
+    //append elements to inner divs
+
+    commentRightDiv.appendChild(commentUpperDiv);
+    commentRightDiv.appendChild(commentLowerDiv);
+
+    commentLeftDiv.appendChild(commenterImage);
+
+    commentLowerDiv.appendChild(commentText);
+    commentUpperDiv.appendChild(commenterName);
+    commentUpperDiv.appendChild(commentDate);
+
+    //append left and right divs to comment list item
+    commentListItem.appendChild(commentLeftDiv);
+    commentListItem.appendChild(commentRightDiv);
+
+    //append list item to ul
+
+    commentsUL.appendChild(commentListItem);
+  }
+}
+displayComments();
+
+//Form Handler
+
+const commentForm = document.querySelector(".comments__form");
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("form submitted");
+
+  const comment = event.target.comment.value;
+  const name = event.target.name.value;
+
+  if (name === "") {
+    alert("You must enter your name");
+    return;
+  }
+
+  if (comment.includes("fuck")) {
+    alert("Let's keep it pg-13 please.");
+    return;
+  }
+
+  const newComment = {
+    name: event.target.name.value,
+    text: event.target.comment.value,
+    date: Date(),
+  };
+
+  comments.push(newComment);
+  displayComments();
+});
+
 // var today = new Date();
 // var date =
 //   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
