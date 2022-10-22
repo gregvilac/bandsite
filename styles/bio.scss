@@ -58,7 +58,7 @@
     margin: auto;
   }
   &__title {
-    font-size: 2.125rem;
+    font-size: 24px;
     font-weight: 600;
     margin-left: 1.5rem;
     margin-top: 1.875rem;
@@ -176,7 +176,7 @@
 
   &__title {
     padding: 1.5rem;
-    font-size: 2.1875rem;
+    font-size: 1.5rem;
     font-weight: 600;
     @include tablet {
       padding: 2.5rem 2.5rem 0 2.5rem;
@@ -214,5 +214,43 @@
         filter: grayscale(0%);
       }
     }
+  }
+}
+
+//---------------------------------------Comments-------------------------------//
+
+.comments {
+  &__wrapper {
+    padding: 24px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &__form-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  &__name-input,
+  &__comment-input {
+    padding: 12px;
+    border: 1px solid $mercury;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    &:focus {
+      border: 1px solid $bandsite-black;
+    }
+  }
+
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
   }
 }

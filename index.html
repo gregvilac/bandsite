@@ -150,11 +150,17 @@
     <!-----------------------Comments--------------------->
     <section class="comments">
       <div class="comments__wrapper">
-        <h2 class="comments__title"></h2>
+        <h2 class="comments__title">Join the Conversation</h2>
         <div class="comments__form-container">
+          <img
+            class="comments__avatar"
+            src="./assets/Images/Mohan-muruge.jpg"
+            alt="avatar"
+          />
           <form class="comments__form" action="">
             <label for="commenterName">Name</label>
             <input
+              class="comments__name-input"
               id="commenterName"
               type="text"
               name="name"
@@ -162,6 +168,7 @@
             />
             <label for="commenterComment">Comment</label>
             <input
+              class="comments__comment-input"
               id="commenterComment"
               type="textarea"
               name="comment"
@@ -169,11 +176,6 @@
             />
             <button type="submit">Comment</button>
           </form>
-          <img
-            class="comments__avatar"
-            src="./assets/Images/Mohan-muruge.jpg"
-            alt="avatar"
-          />
         </div>
         <ul class="comments__list"></ul>
       </div>
