@@ -152,13 +152,15 @@
       <div class="comments__wrapper">
         <h2 class="comments__title">Join the Conversation</h2>
         <div class="comments__form-container">
-          <img
-            class="comments__avatar"
-            src="./assets/Images/Mohan-muruge.jpg"
-            alt="avatar"
-          />
+          <div class="comments__avatar-container">
+            <img
+              class="comments__avatar"
+              src="./assets/Images/Mohan-muruge.jpg"
+              alt="avatar"
+            />
+          </div>
           <form class="comments__form" action="">
-            <label for="commenterName">Name</label>
+            <label class="comments__form-label" for="commenterName">Name</label>
             <input
               class="comments__name-input"
               id="commenterName"
@@ -166,15 +168,19 @@
               name="name"
               placeholder="Enter your name"
             />
-            <label for="commenterComment">Comment</label>
-            <input
+            <label class="comments__form-label" for="commenterComment"
+              >Comment</label
+            >
+            <textarea
               class="comments__comment-input"
               id="commenterComment"
               type="textarea"
               name="comment"
               placeholder="Add a new comment"
-            />
-            <button type="submit">Comment</button>
+            ></textarea>
+            <button class="comments__submit-button" type="submit">
+              Comment
+            </button>
           </form>
         </div>
         <ul class="comments__list"></ul>
@@ -267,6 +273,10 @@
         </h3>
       </div>
     </footer>
+
+    <!--Messing around-->
+    <p class="date"></p>
+    <!--End of messing around-->
     <script src="./scripts/index-page.js"></script>
   </body>
 </html>
