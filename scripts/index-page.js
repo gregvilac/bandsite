@@ -169,12 +169,14 @@ commentForm.addEventListener("submit", (event) => {
     return;
   }
 
+  //save time snapshot
+  const commentTimeStamp = new Date().getTime();
   //create new object for each comment
 
   const newComment = {
     name: event.target.name.value,
     text: event.target.comment.value,
-    date: new Date().toLocaleDateString(),
+    date: getElapsedTime(commentTimeStamp, Date.now()),
   };
 
   comments.push(newComment);
@@ -187,51 +189,27 @@ commentForm.addEventListener("submit", (event) => {
   displayComments();
 });
 
-//Messing around
+//Get elapsed time function
 
-// relativeTime = document.querySelector(".date")
+function getElapsedTime(commentTime, timeNow) {
+  let elapsed = timeNow - commentTime;
+  // let elapsed = 50000000000;
+  const elapsedSeconds = Math.round(elapsed / 1000);
+  const elapsedMinutes = Math.round(elapsedSeconds / 60);
+  const elapsedHours = Math.round(elapsedMinutes / 60);
+  const elapsedDays = Math.round(elapsedHours / 24);
 
-// const hey = Date.now();
-// console.log(hey);
-// const today = new Date();
-
-// console.log(today);
-
-// function timeSince(date) {
-//   var seconds = Math.floor((new Date() - date) / 1000);
-
-//   var interval = seconds / 31536000;
-
-//   if (interval > 1) {
-//     return Math.floor(interval) + " years";
-//   }
-//   interval = seconds / 2592000;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " months";
-//   }
-//   interval = seconds / 86400;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " days";
-//   }
-//   interval = seconds / 3600;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " hours";
-//   }
-//   interval = seconds / 60;
-//   if (interval > 1) {
-//     return Math.floor(interval) + " minutes";
-//   }
-//   return Math.floor(seconds) + " seconds";
-// }
-// var aDay = 24 * 60 * 60 * 1000;
-// console.log(timeSince(new Date(Date.now() - aDay)));
-// console.log(timeSince(new Date(Date.now() - aDay * 2)));
-
-// // var today = new Date();
-// // var date =
-// //   today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-// // var time =
-// //   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-// // var dateTime = date + " " + time;
-
-// // console.log(dateTime);
+  if (elapsedSeconds < 10) {
+    return "Just now";
+  } else if (elapsedSeconds < 60) {
+    return elapsedSeconds + " seconds ago";
+  } else if (elapsedMinutes < 60) {
+    return elapsedMinutes + " minutes ago";
+  } else if (elapsedHours < 24) {
+    return elapsedHours + " hours ago";
+  } else if (elapsedDays < 365) {
+    return elapsedDays + " days ago";
+  } else if (elapsedDays > 365) {
+    return "More than a year ago";
+  }
+}
