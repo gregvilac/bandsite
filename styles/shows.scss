@@ -147,11 +147,22 @@
     flex-direction: column;
     gap: 10px;
     padding: 24px;
+
     @include tablet {
       flex-direction: row;
       padding: 0;
       align-items: center;
       justify-content: space-between;
+      &:hover {
+        // background-color: $alabaster;
+        cursor: pointer;
+      }
+    }
+    &--hover {
+      background-color: $alabaster;
+    }
+    &--selected {
+      background-color: $mercury;
     }
   }
   &__show-heading {

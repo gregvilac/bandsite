@@ -38,27 +38,27 @@ function addShows(shows, ul) {
   for (let i = 0; i < shows.length; ++i) {
     //Create each element for each container
 
-    let dateHeading = document.createElement("h3");
+    const dateHeading = document.createElement("h3");
     dateHeading.classList.add("tickets__show-heading");
     dateHeading.innerText = "DATE";
 
-    let date = document.createElement("p");
+    const date = document.createElement("p");
     date.classList.add("tickets__show-info");
     date.innerText = shows[i].date;
 
-    let venueHeading = document.createElement("h3");
+    const venueHeading = document.createElement("h3");
     venueHeading.classList.add("tickets__show-heading");
     venueHeading.innerText = "VENUE";
 
-    let venue = document.createElement("p");
+    const venue = document.createElement("p");
     venue.classList.add("tickets__show-info");
     venue.innerText = shows[i].venue;
 
-    let locationHeading = document.createElement("h3");
+    const locationHeading = document.createElement("h3");
     locationHeading.classList.add("tickets__show-heading");
     locationHeading.innerText = "LOCATION";
 
-    let location = document.createElement("p");
+    const location = document.createElement("p");
     location.classList.add("tickets__show-info");
     location.innerText = shows[i].location;
 
@@ -68,7 +68,7 @@ function addShows(shows, ul) {
 
     //Create container for each show. In this case its a list item
 
-    let showLI = document.createElement("li");
+    const showLI = document.createElement("li");
     showLI.classList.add("tickets__show-list-item");
 
     //append children elements to the showLI
@@ -87,6 +87,32 @@ function addShows(shows, ul) {
   }
 }
 
-let showsList = document.querySelector(".tickets__shows-list");
+const showsList = document.querySelector(".tickets__shows-list");
 
 addShows(shows, showsList);
+
+//Add hover and select events
+
+let showListItem = document
+  .querySelectorAll(".tickets__show-list-item")
+  .forEach((li) => {
+    li.addEventListener("mouseenter", (event) => {
+      li.classList.add("tickets__show-list-item--hover");
+    });
+    li.addEventListener("mouseleave", (event) => {
+      li.classList.remove("tickets__show-list-item--hover");
+    });
+
+    li.addEventListener("click", (event) => {
+      const showListItemSelected = document.querySelector(
+        ".tickets__show-list-item--selected"
+      );
+      if (showListItemSelected) {
+        showListItemSelected.classList.remove(
+          "tickets__show-list-item--selected"
+        );
+      }
+
+      li.classList.add("tickets__show-list-item--selected");
+    });
+  });

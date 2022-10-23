@@ -446,6 +446,15 @@
     align-items: center;
     justify-content: space-between;
   }
+  .tickets__show-list-item:hover {
+    cursor: pointer;
+  }
+}
+.tickets__show-list-item--hover {
+  background-color: #fafafa;
+}
+.tickets__show-list-item--selected {
+  background-color: #e1e1e1;
 }
 .tickets__show-heading {
   color: #e1e1e1;
