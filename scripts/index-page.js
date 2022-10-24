@@ -193,7 +193,7 @@ commentForm.addEventListener("submit", (event) => {
 
 function getElapsedTime(commentTime, timeNow) {
   let elapsed = timeNow - commentTime;
-  // let elapsed = 50000000000;
+  // let elapsed = 5000000000;
   const elapsedSeconds = Math.round(elapsed / 1000);
   const elapsedMinutes = Math.round(elapsedSeconds / 60);
   const elapsedHours = Math.round(elapsedMinutes / 60);

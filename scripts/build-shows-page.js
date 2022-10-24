@@ -17,7 +17,7 @@ let shows = [
   {
     date: "Sat Nov 06 2021",
     venue: "Hyatt Agency",
-    location: "San Francisco",
+    location: "San Francisco, CA",
   },
   {
     date: "Fri Nov 26 2021",
@@ -43,7 +43,7 @@ function addShows(shows, ul) {
     dateHeading.innerText = "DATE";
 
     const date = document.createElement("p");
-    date.classList.add("tickets__show-info");
+    date.classList.add("tickets__show-date");
     date.innerText = shows[i].date;
 
     const venueHeading = document.createElement("h3");

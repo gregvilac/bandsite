@@ -94,7 +94,7 @@
 
 .footer {
   background-color: $bandsite-black;
-  padding: 1.5rem;
+  padding: 24px 16px;
   // position: relative;
   max-width: 100%;
   @include tablet {
@@ -225,11 +225,13 @@
       right: 0px;
       top: 0px;
       width: 7.5rem;
+      margin-right: 20px;
     }
     @include desktop {
       position: absolute;
       right: 1.25rem;
       top: 1.875rem;
+      margin-right: 10px;
     }
   }
 }
