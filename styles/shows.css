@@ -418,7 +418,7 @@
 @media screen and (min-width: 1280px) {
   .tickets__content {
     flex: 1;
-    padding-top: 25px;
+    padding-top: 20px;
   }
 }
 .tickets__headings-container {
@@ -488,6 +488,7 @@
 }
 @media screen and (min-width: 768px) {
   .tickets__show-date {
+    margin-bottom: 0;
     width: 20%;
     text-align: left;
   }
@@ -497,6 +498,7 @@
 }
 @media screen and (min-width: 768px) {
   .tickets__show-info {
+    margin-bottom: 0;
     width: 20%;
     text-align: left;
   }

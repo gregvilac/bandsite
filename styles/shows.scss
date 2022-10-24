@@ -122,7 +122,7 @@
   &__content {
     @include desktop {
       flex: 1;
-      padding-top: 25px;
+      padding-top: 20px;
     }
   }
   &__headings-container {
@@ -188,6 +188,7 @@
     font-weight: 600;
     margin-bottom: 5px;
     @include tablet {
+      margin-bottom: 0;
       width: 20%;
       text-align: left;
     }
@@ -196,6 +197,7 @@
   &__show-info {
     margin-bottom: 5px;
     @include tablet {
+      margin-bottom: 0;
       width: 20%;
       text-align: left;
     }
