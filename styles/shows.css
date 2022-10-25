@@ -146,26 +146,26 @@
 }
 .footer__title {
   color: white;
-  font-size: 2.1875rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
   width: auto;
 }
 @media screen and (min-width: 768px) {
   .footer__title {
-    font-size: 2.125rem;
+    font-size: 2.25rem;
     padding-bottom: 1.5rem;
   }
 }
 .footer__socials-container {
   flex: 1;
   width: 100%;
-  padding-top: 0.3125rem;
+  padding-top: 8px;
   display: flex;
   justify-content: flex-start;
   gap: 1.875rem;
   position: absolute;
-  top: 3.75rem;
+  top: 40px;
 }
 @media screen and (min-width: 768px) {
   .footer__socials-container {
@@ -174,7 +174,7 @@
   }
 }
 .footer__socials-icon {
-  height: 2.1875rem;
+  height: 24px;
 }
 @media screen and (min-width: 768px) {
   .footer__socials-icon {
@@ -189,8 +189,13 @@
   .footer__card-container {
     flex-direction: row;
     justify-content: flex-start;
-    gap: 2.5rem;
+    gap: 2rem;
     margin-top: 1.875rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .footer__card-container {
+    gap: 3rem;
   }
 }
 .footer__name {
@@ -199,7 +204,7 @@
 .footer__name-text {
   color: white;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 0.8125rem;
 }
 @media screen and (min-width: 768px) {
   .footer__name-text {
@@ -211,7 +216,7 @@
   color: white;
 }
 .footer__location-text {
-  font-size: 1.125rem;
+  font-size: 0.8125rem;
 }
 @media screen and (min-width: 768px) {
   .footer__location-text {
@@ -224,7 +229,7 @@
 .footer__email-text {
   text-decoration: none;
   color: white;
-  font-size: 1.125rem;
+  font-size: 0.8125rem;
 }
 @media screen and (min-width: 768px) {
   .footer__email-text {
@@ -237,11 +242,12 @@
 .footer__copyright {
   color: white;
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 11px;
   padding-top: 4.375rem;
 }
 @media screen and (min-width: 768px) {
   .footer__copyright {
+    font-size: 0.875rem;
     padding: 1rem 0;
     margin: 0;
   }
@@ -256,8 +262,8 @@
 }
 .footer__logo {
   position: absolute;
-  top: 22.5rem;
-  width: 9.375rem;
+  top: 310px;
+  width: 120px;
 }
 @media screen and (min-width: 768px) {
   .footer__logo {
@@ -325,13 +331,13 @@
 .hero__album-name {
   color: #fafafa;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 0.875rem;
   margin-bottom: 24px;
 }
 @media screen and (min-width: 768px) {
   .hero__album-name {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 .hero__bottom {
@@ -347,7 +353,7 @@
   }
 }
 .hero__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: white;
   font-weight: 600;
   width: 80%;
@@ -401,13 +407,13 @@
   }
 }
 .tickets__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 30px 0 16px 16px;
 }
 @media screen and (min-width: 768px) {
   .tickets__title {
-    font-size: 40px;
+    font-size: 2.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -418,7 +424,7 @@
 @media screen and (min-width: 1280px) {
   .tickets__content {
     flex: 1;
-    padding-top: 20px;
+    padding-top: 25px;
   }
 }
 .tickets__headings-container {
@@ -433,6 +439,8 @@
 }
 .tickets__tablet-heading {
   text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
   color: #afafaf;
   width: 25%;
   text-align: left;
@@ -475,7 +483,7 @@
 .tickets__show-heading {
   color: #afafaf;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.625rem;
 }
 @media screen and (min-width: 768px) {
   .tickets__show-heading {
@@ -484,10 +492,12 @@
 }
 .tickets__show-date {
   font-weight: 600;
+  font-size: 0.8125rem;
   margin-bottom: 5px;
 }
 @media screen and (min-width: 768px) {
   .tickets__show-date {
+    font-size: 0.875rem;
     margin-bottom: 0;
     width: 20%;
     text-align: left;
@@ -495,9 +505,11 @@
 }
 .tickets__show-info {
   margin-bottom: 5px;
+  font-size: 0.8125rem;
 }
 @media screen and (min-width: 768px) {
   .tickets__show-info {
+    font-size: 0.875rem;
     margin-bottom: 0;
     width: 20%;
     text-align: left;

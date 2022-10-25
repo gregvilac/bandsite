@@ -116,31 +116,31 @@
 
   &__title {
     color: white;
-    font-size: 2.1875rem;
+    font-size: $mobile-section-header;
     font-weight: 600;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
     width: auto;
     @include tablet {
-      font-size: 2.125rem;
+      font-size: $tablet-desktop-section-header;
       padding-bottom: 1.5rem;
     }
   }
   &__socials-container {
     flex: 1;
     width: 100%;
-    padding-top: 0.3125rem;
+    padding-top: 8px;
     display: flex;
     justify-content: flex-start;
     gap: 1.875rem;
     position: absolute;
-    top: 3.75rem;
+    top: 40px;
     @include tablet {
       position: relative;
       top: 0px;
     }
   }
   &__socials-icon {
-    height: 2.1875rem;
+    height: 24px;
     @include tablet {
       height: 1.5625rem;
     }
@@ -152,8 +152,11 @@
     @include tablet {
       flex-direction: row;
       justify-content: flex-start;
-      gap: 2.5rem;
+      gap: 2rem;
       margin-top: 1.875rem;
+      @include desktop {
+        gap: 3rem;
+      }
     }
   }
 
@@ -163,9 +166,9 @@
   &__name-text {
     color: white;
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: $mobile-footer-copy;
     @include tablet {
-      font-size: 0.875rem;
+      font-size: $tablet-desktop-footer-copy;
     }
   }
   &__location {
@@ -173,9 +176,9 @@
     color: white;
   }
   &__location-text {
-    font-size: 1.125rem;
+    font-size: $mobile-footer-copy;
     @include tablet {
-      font-size: 0.875rem;
+      font-size: $tablet-desktop-footer-copy;
     }
   }
   &__email {
@@ -184,9 +187,9 @@
   &__email-text {
     text-decoration: none;
     color: white;
-    font-size: 1.125rem;
+    font-size: $mobile-footer-copy;
     @include tablet {
-      font-size: 0.875rem;
+      font-size: $tablet-desktop-footer-copy;
     }
     &:hover {
       color: magenta;
@@ -196,9 +199,10 @@
   &__copyright {
     color: white;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 11px;
     padding-top: 4.375rem;
     @include tablet {
+      font-size: $tablet-desktop-footer-copy;
       padding: 1rem 0;
       margin: 0;
     }
@@ -214,8 +218,8 @@
   }
   &__logo {
     position: absolute;
-    top: 22.5rem;
-    width: 9.375rem;
+    top: 310px;
+    width: 120px;
 
     @include tablet {
       margin-left: auto;

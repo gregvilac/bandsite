@@ -103,7 +103,7 @@ let showListItem = document
       li.classList.remove("tickets__show-list-item--hover");
     });
 
-    li.addEventListener("click", (event) => {
+    li.addEventListener("click", function (event) {
       const showListItemSelected = document.querySelector(
         ".tickets__show-list-item--selected"
       );
@@ -112,7 +112,7 @@ let showListItem = document
           "tickets__show-list-item--selected"
         );
       }
-
+      console.log(this);
       li.classList.add("tickets__show-list-item--selected");
     });
   });

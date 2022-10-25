@@ -43,11 +43,11 @@
   &__album-name {
     color: $alabaster;
     font-weight: 400;
-    font-size: 18px;
+    font-size: $mobile-sub-heading;
     margin-bottom: 24px;
     @include tablet {
       font-weight: 600;
-      font-size: 24px;
+      font-size: $tablet-desktop-sub-heading;
     }
   }
   &__bottom {
@@ -61,13 +61,13 @@
     }
   }
   &__title {
-    font-size: 24px;
+    font-size: $mobile-page-header;
     color: white;
     font-weight: 600;
     width: 80%;
     line-height: 1.5;
     @include tablet {
-      font-size: 3.75rem;
+      font-size: $tablet-desktop-page-header;
       width: 80%;
     }
     @include desktop {
@@ -108,12 +108,12 @@
   }
 
   &__title {
-    font-size: 24px;
+    font-size: $mobile-section-header;
     font-weight: 600;
     margin: 30px 0 16px 16px;
 
     @include tablet {
-      font-size: 40px;
+      font-size: $tablet-desktop-section-header;
     }
     @include desktop {
       margin: 0;
@@ -122,7 +122,7 @@
   &__content {
     @include desktop {
       flex: 1;
-      padding-top: 20px;
+      padding-top: 25px;
     }
   }
   &__headings-container {
@@ -136,6 +136,8 @@
 
   &__tablet-heading {
     text-transform: uppercase;
+    font-size: $tablet-desktop-labels-buttons;
+    font-weight: 600;
     color: $silver;
     width: 25%;
     text-align: left;
@@ -179,15 +181,17 @@
   &__show-heading {
     color: $silver;
     font-weight: 600;
-    font-size: 12px;
+    font-size: $mobile-labels-buttons;
     @include tablet {
       display: none;
     }
   }
   &__show-date {
     font-weight: 600;
+    font-size: $mobile-body-copy;
     margin-bottom: 5px;
     @include tablet {
+      font-size: $tablet-desktop-body-copy;
       margin-bottom: 0;
       width: 20%;
       text-align: left;
@@ -196,7 +200,9 @@
 
   &__show-info {
     margin-bottom: 5px;
+    font-size: $mobile-body-copy;
     @include tablet {
+      font-size: $tablet-desktop-body-copy;
       margin-bottom: 0;
       width: 20%;
       text-align: left;
