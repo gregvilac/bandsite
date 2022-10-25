@@ -1,99 +1,127 @@
-const comments = [
-  {
-    name: "Miles Acosta",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    date: "12/20/2020",
-    image: undefined,
-  },
+const apiKey = "f5e438b2-2b7c-4b5c-b49a-b70c5fd889d5";
 
-  {
-    name: "Emilie Beach",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    date: "01/09/2021",
-    image: undefined,
-  },
+//Get time
+function getElapsedTime(commentTime, timeNow) {
+  let elapsed = timeNow - commentTime;
+  // let elapsed = 5000000000;
+  const elapsedSeconds = Math.round(elapsed / 1000);
+  const elapsedMinutes = Math.round(elapsedSeconds / 60);
+  const elapsedHours = Math.round(elapsedMinutes / 60);
+  const elapsedDays = Math.round(elapsedHours / 24);
 
-  {
-    name: "Connor Walton",
-    text: "This is art. This is inexplicable magic expressed in the purest way everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    date: "02/17/2021",
-    image: undefined,
-  },
-];
-
-function displayComments() {
-  const commentsUL = document.querySelector(".comments__list");
-  commentsUL.innerText = "";
-  for (let i = 0; i < comments.length; i++) {
-    //create dynamic elements
-    const commenterName = document.createElement("h3");
-    commenterName.classList.add("comments__commenter-name-text");
-    commenterName.innerText = comments[i].name;
-
-    const commentText = document.createElement("p");
-    commentText.classList.add("comments__comment-text");
-    commentText.innerText = comments[i].text;
-
-    const commentDate = document.createElement("p");
-    commentDate.classList.add("comments__comment-date");
-    commentDate.innerText = comments[i].date;
-
-    //create image element
-    const commenterImage = document.createElement("img");
-    commenterImage.classList.add("comments__commenter-image");
-
-    //check this later//
-    if (comments.image === undefined) {
-      commenterImage.classList.add("comments__commenter-image--undefined");
-    } else {
-      commenterImage.src = comments[i].image;
-    }
-
-    //create left div
-    const commentLeftDiv = document.createElement("div");
-    commentLeftDiv.classList.add("comments__comment-left-div");
-
-    //create right div
-
-    const commentRightDiv = document.createElement("div");
-    commentRightDiv.classList.add("comments__comment-right-div");
-
-    //create upper right div
-
-    const commentUpperDiv = document.createElement("div");
-    commentUpperDiv.classList.add("comments__comment-upper-div");
-
-    //create lower right div
-
-    const commentLowerDiv = document.createElement("div");
-    commentLowerDiv.classList.add("comments__comment-lower-div");
-
-    //create li to hold each comment
-
-    const commentListItem = document.createElement("div");
-    commentListItem.classList.add("comments__comment-list-item");
-
-    //append elements to inner divs
-
-    commentLowerDiv.appendChild(commentText);
-    commentUpperDiv.appendChild(commenterName);
-    commentUpperDiv.appendChild(commentDate);
-
-    commentRightDiv.appendChild(commentUpperDiv);
-    commentRightDiv.appendChild(commentLowerDiv);
-
-    commentLeftDiv.appendChild(commenterImage);
-
-    //append left and right divs to comment list item
-    commentListItem.appendChild(commentLeftDiv);
-    commentListItem.appendChild(commentRightDiv);
-
-    //append list item to ul
-
-    commentsUL.appendChild(commentListItem);
+  if (elapsedSeconds < 10) {
+    return "Just now";
+  } else if (elapsedSeconds < 60) {
+    return elapsedSeconds + " seconds ago";
+  } else if (elapsedMinutes < 60) {
+    return elapsedMinutes + " minutes ago";
+  } else if (elapsedHours < 24) {
+    return elapsedHours + " hours ago";
+  } else if (elapsedDays < 365) {
+    return elapsedDays + " days ago";
+  } else if (elapsedDays > 365) {
+    return "More than a year ago";
   }
 }
+
+//Get comments and then display them.
+
+// function getCommentsArray() {
+//   axios
+//     .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
+//     .then((response) => {
+//       const commentsArray = response.data;
+//       return commentsArray;
+//     });
+// }
+const commentsUL = document.querySelector(".comments__list");
+
+function displayComments() {
+  // commentsUL.innerText = "";
+
+  axios
+    .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
+    .then((response) => {
+      console.log(response);
+
+      const commentsArray = response.data;
+
+      for (let i = 0; i < commentsArray.length; i++) {
+        //create dynamic elements
+        const commenterName = document.createElement("h3");
+        commenterName.classList.add("comments__commenter-name-text");
+        commenterName.innerText = commentsArray[i].name;
+
+        const commentText = document.createElement("p");
+        commentText.classList.add("comments__comment-text");
+        commentText.innerText = commentsArray[i].comment;
+
+        const commentDate = document.createElement("p");
+        commentDate.classList.add("comments__comment-date");
+
+        commentDate.innerText = getElapsedTime(
+          commentsArray[i].timestamp,
+          Date.now()
+        );
+
+        //create image element
+        const commenterImage = document.createElement("img");
+        commenterImage.classList.add("comments__commenter-image");
+
+        //check this later//
+        if (commentsArray[i].image === undefined) {
+          commenterImage.classList.add("comments__commenter-image--undefined");
+        } else {
+          commenterImage.src = commentsArray[i].image;
+        }
+
+        //create left div
+        const commentLeftDiv = document.createElement("div");
+        commentLeftDiv.classList.add("comments__comment-left-div");
+
+        //create right div
+
+        const commentRightDiv = document.createElement("div");
+        commentRightDiv.classList.add("comments__comment-right-div");
+
+        //create upper right div
+
+        const commentUpperDiv = document.createElement("div");
+        commentUpperDiv.classList.add("comments__comment-upper-div");
+
+        //create lower right div
+
+        const commentLowerDiv = document.createElement("div");
+        commentLowerDiv.classList.add("comments__comment-lower-div");
+
+        //create li to hold each comment
+
+        const commentListItem = document.createElement("div");
+        commentListItem.classList.add("comments__comment-list-item");
+
+        //append elements to inner divs
+
+        commentLowerDiv.appendChild(commentText);
+        commentUpperDiv.appendChild(commenterName);
+        commentUpperDiv.appendChild(commentDate);
+
+        commentRightDiv.appendChild(commentUpperDiv);
+        commentRightDiv.appendChild(commentLowerDiv);
+
+        commentLeftDiv.appendChild(commenterImage);
+
+        //append left and right divs to comment list item
+        commentListItem.appendChild(commentLeftDiv);
+        commentListItem.appendChild(commentRightDiv);
+
+        //append list item to ul
+
+        commentsUL.appendChild(commentListItem);
+      }
+    });
+}
 displayComments();
+//User Friendly form effects for focus and focus out on input fields.
 
 //remove placeholder text on forms when focused
 const nameInput = document.querySelector(".comments__name-input");
@@ -169,47 +197,171 @@ commentForm.addEventListener("submit", (event) => {
     return;
   }
 
-  //save time snapshot
-  const commentTimeStamp = new Date().getTime();
-  //create new object for each comment
-
   const newComment = {
     name: event.target.name.value,
-    text: event.target.comment.value,
-    date: getElapsedTime(commentTimeStamp, Date.now()),
+    comment: event.target.comment.value,
   };
 
-  comments.push(newComment);
+  axios.post(
+    "https://project-1-api.herokuapp.com/comments?api_key=" + apiKey,
+    newComment
+  );
+
+  //create new object for each comment
+
+  // const newComment = {
+  //   name: event.target.name.value,
+  //   text: event.target.comment.value,
+  //   date: getElapsedTime(commentTimeStamp, Date.now()),
+  // };
+
+  // comments.push(newComment);
 
   //Reset input fields back to placeholders.
+
+  function pushCommentsArray(object) {
+    axios
+      .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
+      .then((response) => {
+        const array = response.data;
+
+        array.push(object);
+        // commentsUL.innerText = "";
+      })
+
+      .then(displayComments());
+  }
+
+  pushCommentsArray(newComment);
 
   nameInput.value = "";
   commentInput.value = "";
 
-  displayComments();
+  // commentsArray.push(newComment);
+
+  // displayComments();
 });
 
 //Get elapsed time function
 
-function getElapsedTime(commentTime, timeNow) {
-  let elapsed = timeNow - commentTime;
-  // let elapsed = 5000000000;
-  const elapsedSeconds = Math.round(elapsed / 1000);
-  const elapsedMinutes = Math.round(elapsedSeconds / 60);
-  const elapsedHours = Math.round(elapsedMinutes / 60);
-  const elapsedDays = Math.round(elapsedHours / 24);
+// function getElapsedTime(commentTime, timeNow) {
+//   let elapsed = timeNow - commentTime;
+//   // let elapsed = 5000000000;
+//   const elapsedSeconds = Math.round(elapsed / 1000);
+//   const elapsedMinutes = Math.round(elapsedSeconds / 60);
+//   const elapsedHours = Math.round(elapsedMinutes / 60);
+//   const elapsedDays = Math.round(elapsedHours / 24);
 
-  if (elapsedSeconds < 10) {
-    return "Just now";
-  } else if (elapsedSeconds < 60) {
-    return elapsedSeconds + " seconds ago";
-  } else if (elapsedMinutes < 60) {
-    return elapsedMinutes + " minutes ago";
-  } else if (elapsedHours < 24) {
-    return elapsedHours + " hours ago";
-  } else if (elapsedDays < 365) {
-    return elapsedDays + " days ago";
-  } else if (elapsedDays > 365) {
-    return "More than a year ago";
-  }
-}
+//   if (elapsedSeconds < 10) {
+//     return "Just now";
+//   } else if (elapsedSeconds < 60) {
+//     return elapsedSeconds + " seconds ago";
+//   } else if (elapsedMinutes < 60) {
+//     return elapsedMinutes + " minutes ago";
+//   } else if (elapsedHours < 24) {
+//     return elapsedHours + " hours ago";
+//   } else if (elapsedDays < 365) {
+//     return elapsedDays + " days ago";
+//   } else if (elapsedDays > 365) {
+//     return "More than a year ago";
+//   }
+// }
+
+//Sprint 2 Content
+
+// const comments = [
+//   {
+//     name: "Miles Acosta",
+//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//     date: "12/20/2020",
+//     image: undefined,
+//   },
+
+//   {
+//     name: "Emilie Beach",
+//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//     date: "01/09/2021",
+//     image: undefined,
+//   },
+
+//   {
+//     name: "Connor Walton",
+//     text: "This is art. This is inexplicable magic expressed in the purest way everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//     date: "02/17/2021",
+//     image: undefined,
+//   },
+// ];
+
+// function displayComments() {
+//   const commentsUL = document.querySelector(".comments__list");
+//   commentsUL.innerText = "";
+//   for (let i = 0; i < comments.length; i++) {
+//     //create dynamic elements
+//     const commenterName = document.createElement("h3");
+//     commenterName.classList.add("comments__commenter-name-text");
+//     commenterName.innerText = comments[i].name;
+
+//     const commentText = document.createElement("p");
+//     commentText.classList.add("comments__comment-text");
+//     commentText.innerText = comments[i].text;
+
+//     const commentDate = document.createElement("p");
+//     commentDate.classList.add("comments__comment-date");
+//     commentDate.innerText = comments[i].date;
+
+//     //create image element
+//     const commenterImage = document.createElement("img");
+//     commenterImage.classList.add("comments__commenter-image");
+
+//     //check this later//
+//     if (comments.image === undefined) {
+//       commenterImage.classList.add("comments__commenter-image--undefined");
+//     } else {
+//       commenterImage.src = comments[i].image;
+//     }
+
+//     //create left div
+//     const commentLeftDiv = document.createElement("div");
+//     commentLeftDiv.classList.add("comments__comment-left-div");
+
+//     //create right div
+
+//     const commentRightDiv = document.createElement("div");
+//     commentRightDiv.classList.add("comments__comment-right-div");
+
+//     //create upper right div
+
+//     const commentUpperDiv = document.createElement("div");
+//     commentUpperDiv.classList.add("comments__comment-upper-div");
+
+//     //create lower right div
+
+//     const commentLowerDiv = document.createElement("div");
+//     commentLowerDiv.classList.add("comments__comment-lower-div");
+
+//     //create li to hold each comment
+
+//     const commentListItem = document.createElement("div");
+//     commentListItem.classList.add("comments__comment-list-item");
+
+//     //append elements to inner divs
+
+//     commentLowerDiv.appendChild(commentText);
+//     commentUpperDiv.appendChild(commenterName);
+//     commentUpperDiv.appendChild(commentDate);
+
+//     commentRightDiv.appendChild(commentUpperDiv);
+//     commentRightDiv.appendChild(commentLowerDiv);
+
+//     commentLeftDiv.appendChild(commenterImage);
+
+//     //append left and right divs to comment list item
+//     commentListItem.appendChild(commentLeftDiv);
+//     commentListItem.appendChild(commentRightDiv);
+
+//     //append list item to ul
+
+//     commentsUL.appendChild(commentListItem);
+//   }
+// }
+// displayComments();
