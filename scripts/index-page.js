@@ -24,8 +24,8 @@ function getElapsedTime(commentTime, timeNow) {
   }
 }
 
-//Build Comments----------------------------------------------------
-function buildComments(array) {
+//Display Comments Function----------------------------------------------------
+function displayComments(array) {
   const commentsUL = document.querySelector(".comments__list");
   commentsUL.innerText = "";
 
@@ -58,6 +58,7 @@ function buildComments(array) {
     //create delete button
     const deleteButton = document.createElement("p");
     deleteButton.classList.add("comments__delete-button");
+    deleteButton.id = array[i].id;
     deleteButton.innerText = "Delete";
 
     //create left div
@@ -106,17 +107,34 @@ function buildComments(array) {
   }
 }
 
-//Display Comments--------------------------------------------------
+//Delete Comment Function----------------------------------
 
-function displayComments() {
+function deleteComment(id) {
+  axios.delete(
+    "https://project-1-api.herokuapp.com/comments/" + id + "?api_key=" + apiKey
+  );
+}
+//Get Comments & Set Delete Functionality--------------------------------------------------
+
+function getComments() {
   axios
     .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
     .then((response) => {
       const commentsArray = response.data;
-      buildComments(commentsArray);
+      displayComments(commentsArray);
+    })
+    .then((response) => {
+      document
+        .querySelectorAll(".comments__delete-button")
+        .forEach((button) => {
+          button.addEventListener("click", (event) => {
+            console.log("dang");
+            deleteComment(button.id);
+          });
+        });
     });
 }
-displayComments();
+getComments();
 
 //Form Effects-----------------------------------------------------------------
 
@@ -215,7 +233,7 @@ commentForm.addEventListener("submit", (event) => {
         array.push(object);
       })
 
-      .then(displayComments());
+      .then(getComments());
   }
 
   pushCommentsArray(newComment);
@@ -224,27 +242,29 @@ commentForm.addEventListener("submit", (event) => {
   commentInput.value = "";
 });
 
-//Get elapsed time function
+// //Delete Comment Function
 
-// function getElapsedTime(commentTime, timeNow) {
-//   let elapsed = timeNow - commentTime;
-//   // let elapsed = 5000000000;
-//   const elapsedSeconds = Math.round(elapsed / 1000);
-//   const elapsedMinutes = Math.round(elapsedSeconds / 60);
-//   const elapsedHours = Math.round(elapsedMinutes / 60);
-//   const elapsedDays = Math.round(elapsedHours / 24);
-
-//   if (elapsedSeconds < 10) {
-//     return "Just now";
-//   } else if (elapsedSeconds < 60) {
-//     return elapsedSeconds + " seconds ago";
-//   } else if (elapsedMinutes < 60) {
-//     return elapsedMinutes + " minutes ago";
-//   } else if (elapsedHours < 24) {
-//     return elapsedHours + " hours ago";
-//   } else if (elapsedDays < 365) {
-//     return elapsedDays + " days ago";
-//   } else if (elapsedDays > 365) {
-//     return "More than a year ago";
-//   }
+// function deleteComment(id) {
+//   axios.delete(
+//     "https://project-1-api.herokuapp.com/comments/" + id + "?api_key=" + apiKey
+//   );
 // }
+
+// let deleteButton = document
+//   .querySelectorAll(".comments__delete-button")
+//   .forEach((button) => {
+//     button.addEventListener("click", (event) => {
+//       console.log("dang");
+//       deleteComment(button.id);
+//     });
+//   });
+
+// let showListItem = document
+//       .querySelectorAll(".tickets__show-list-item")
+//       .forEach((li) => {
+//         li.addEventListener("mouseenter", (event) => {
+//           li.classList.add("tickets__show-list-item--hover");
+//         });
+//         li.addEventListener("mouseleave", (event) => {
+//           li.classList.remove("tickets__show-list-item--hover");
+//         });
