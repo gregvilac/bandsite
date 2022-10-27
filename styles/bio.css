@@ -749,6 +749,9 @@
 .comments__commenter-image--undefined {
   background-color: #e1e1e1;
 }
+.comments__delete-button:hover {
+  cursor: pointer;
+}
 .comments__comment-right-div {
   flex: 1;
   overflow: hidden;

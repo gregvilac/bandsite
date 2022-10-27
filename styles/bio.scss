@@ -384,6 +384,12 @@
   &__commenter-image--undefined {
     background-color: $mercury;
   }
+
+  &__delete-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
   &__comment-right-div {
     flex: 1;
     overflow: hidden;

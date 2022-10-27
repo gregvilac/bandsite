@@ -24,104 +24,101 @@ function getElapsedTime(commentTime, timeNow) {
   }
 }
 
-//Get comments and then display them.
+//Build Comments----------------------------------------------------
+function buildComments(array) {
+  const commentsUL = document.querySelector(".comments__list");
+  commentsUL.innerText = "";
 
-// function getCommentsArray() {
-//   axios
-//     .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
-//     .then((response) => {
-//       const commentsArray = response.data;
-//       return commentsArray;
-//     });
-// }
-const commentsUL = document.querySelector(".comments__list");
+  for (let i = 0; i < array.length; i++) {
+    //create dynamic elements
+    const commenterName = document.createElement("h3");
+    commenterName.classList.add("comments__commenter-name-text");
+    commenterName.innerText = array[i].name;
+
+    const commentText = document.createElement("p");
+    commentText.classList.add("comments__comment-text");
+    commentText.innerText = array[i].comment;
+
+    const commentDate = document.createElement("p");
+    commentDate.classList.add("comments__comment-date");
+
+    commentDate.innerText = getElapsedTime(array[i].timestamp, Date.now());
+
+    //create image element
+    const commenterImage = document.createElement("img");
+    commenterImage.classList.add("comments__commenter-image");
+
+    //check this later//
+    if (array[i].image === undefined) {
+      commenterImage.classList.add("comments__commenter-image--undefined");
+    } else {
+      commenterImage.src = array[i].image;
+    }
+
+    //create delete button
+    const deleteButton = document.createElement("p");
+    deleteButton.classList.add("comments__delete-button");
+    deleteButton.innerText = "Delete";
+
+    //create left div
+    const commentLeftDiv = document.createElement("div");
+    commentLeftDiv.classList.add("comments__comment-left-div");
+
+    //create right div
+
+    const commentRightDiv = document.createElement("div");
+    commentRightDiv.classList.add("comments__comment-right-div");
+
+    //create upper right div
+
+    const commentUpperDiv = document.createElement("div");
+    commentUpperDiv.classList.add("comments__comment-upper-div");
+
+    //create lower right div
+
+    const commentLowerDiv = document.createElement("div");
+    commentLowerDiv.classList.add("comments__comment-lower-div");
+
+    //create li to hold each comment
+
+    const commentListItem = document.createElement("div");
+    commentListItem.classList.add("comments__comment-list-item");
+
+    //append elements to inner divs
+
+    commentLowerDiv.appendChild(commentText);
+    commentUpperDiv.appendChild(commenterName);
+    commentUpperDiv.appendChild(commentDate);
+
+    commentRightDiv.appendChild(commentUpperDiv);
+    commentRightDiv.appendChild(commentLowerDiv);
+
+    commentLeftDiv.appendChild(commenterImage);
+    commentLeftDiv.appendChild(deleteButton);
+
+    //append left and right divs to comment list item
+    commentListItem.appendChild(commentLeftDiv);
+    commentListItem.appendChild(commentRightDiv);
+
+    //append list item to ul
+
+    commentsUL.appendChild(commentListItem);
+  }
+}
+
+//Display Comments--------------------------------------------------
 
 function displayComments() {
-  // commentsUL.innerText = "";
-
   axios
     .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
     .then((response) => {
-      console.log(response);
-
       const commentsArray = response.data;
-
-      for (let i = 0; i < commentsArray.length; i++) {
-        //create dynamic elements
-        const commenterName = document.createElement("h3");
-        commenterName.classList.add("comments__commenter-name-text");
-        commenterName.innerText = commentsArray[i].name;
-
-        const commentText = document.createElement("p");
-        commentText.classList.add("comments__comment-text");
-        commentText.innerText = commentsArray[i].comment;
-
-        const commentDate = document.createElement("p");
-        commentDate.classList.add("comments__comment-date");
-
-        commentDate.innerText = getElapsedTime(
-          commentsArray[i].timestamp,
-          Date.now()
-        );
-
-        //create image element
-        const commenterImage = document.createElement("img");
-        commenterImage.classList.add("comments__commenter-image");
-
-        //check this later//
-        if (commentsArray[i].image === undefined) {
-          commenterImage.classList.add("comments__commenter-image--undefined");
-        } else {
-          commenterImage.src = commentsArray[i].image;
-        }
-
-        //create left div
-        const commentLeftDiv = document.createElement("div");
-        commentLeftDiv.classList.add("comments__comment-left-div");
-
-        //create right div
-
-        const commentRightDiv = document.createElement("div");
-        commentRightDiv.classList.add("comments__comment-right-div");
-
-        //create upper right div
-
-        const commentUpperDiv = document.createElement("div");
-        commentUpperDiv.classList.add("comments__comment-upper-div");
-
-        //create lower right div
-
-        const commentLowerDiv = document.createElement("div");
-        commentLowerDiv.classList.add("comments__comment-lower-div");
-
-        //create li to hold each comment
-
-        const commentListItem = document.createElement("div");
-        commentListItem.classList.add("comments__comment-list-item");
-
-        //append elements to inner divs
-
-        commentLowerDiv.appendChild(commentText);
-        commentUpperDiv.appendChild(commenterName);
-        commentUpperDiv.appendChild(commentDate);
-
-        commentRightDiv.appendChild(commentUpperDiv);
-        commentRightDiv.appendChild(commentLowerDiv);
-
-        commentLeftDiv.appendChild(commenterImage);
-
-        //append left and right divs to comment list item
-        commentListItem.appendChild(commentLeftDiv);
-        commentListItem.appendChild(commentRightDiv);
-
-        //append list item to ul
-
-        commentsUL.appendChild(commentListItem);
-      }
+      buildComments(commentsArray);
     });
 }
 displayComments();
-//User Friendly form effects for focus and focus out on input fields.
+
+//Form Effects-----------------------------------------------------------------
 
 //remove placeholder text on forms when focused
 const nameInput = document.querySelector(".comments__name-input");
@@ -155,7 +152,7 @@ commentInput.addEventListener("focusout", (event) => {
   }
 });
 
-//Form Handler
+//Form Handler--------------------------------------------------------------------
 
 const commentForm = document.querySelector(".comments__form");
 commentForm.addEventListener("submit", (event) => {
@@ -207,16 +204,6 @@ commentForm.addEventListener("submit", (event) => {
     newComment
   );
 
-  //create new object for each comment
-
-  // const newComment = {
-  //   name: event.target.name.value,
-  //   text: event.target.comment.value,
-  //   date: getElapsedTime(commentTimeStamp, Date.now()),
-  // };
-
-  // comments.push(newComment);
-
   //Reset input fields back to placeholders.
 
   function pushCommentsArray(object) {
@@ -226,7 +213,6 @@ commentForm.addEventListener("submit", (event) => {
         const array = response.data;
 
         array.push(object);
-        // commentsUL.innerText = "";
       })
 
       .then(displayComments());
@@ -236,10 +222,6 @@ commentForm.addEventListener("submit", (event) => {
 
   nameInput.value = "";
   commentInput.value = "";
-
-  // commentsArray.push(newComment);
-
-  // displayComments();
 });
 
 //Get elapsed time function
@@ -266,102 +248,3 @@ commentForm.addEventListener("submit", (event) => {
 //     return "More than a year ago";
 //   }
 // }
-
-//Sprint 2 Content
-
-// const comments = [
-//   {
-//     name: "Miles Acosta",
-//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//     date: "12/20/2020",
-//     image: undefined,
-//   },
-
-//   {
-//     name: "Emilie Beach",
-//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//     date: "01/09/2021",
-//     image: undefined,
-//   },
-
-//   {
-//     name: "Connor Walton",
-//     text: "This is art. This is inexplicable magic expressed in the purest way everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//     date: "02/17/2021",
-//     image: undefined,
-//   },
-// ];
-
-// function displayComments() {
-//   const commentsUL = document.querySelector(".comments__list");
-//   commentsUL.innerText = "";
-//   for (let i = 0; i < comments.length; i++) {
-//     //create dynamic elements
-//     const commenterName = document.createElement("h3");
-//     commenterName.classList.add("comments__commenter-name-text");
-//     commenterName.innerText = comments[i].name;
-
-//     const commentText = document.createElement("p");
-//     commentText.classList.add("comments__comment-text");
-//     commentText.innerText = comments[i].text;
-
-//     const commentDate = document.createElement("p");
-//     commentDate.classList.add("comments__comment-date");
-//     commentDate.innerText = comments[i].date;
-
-//     //create image element
-//     const commenterImage = document.createElement("img");
-//     commenterImage.classList.add("comments__commenter-image");
-
-//     //check this later//
-//     if (comments.image === undefined) {
-//       commenterImage.classList.add("comments__commenter-image--undefined");
-//     } else {
-//       commenterImage.src = comments[i].image;
-//     }
-
-//     //create left div
-//     const commentLeftDiv = document.createElement("div");
-//     commentLeftDiv.classList.add("comments__comment-left-div");
-
-//     //create right div
-
-//     const commentRightDiv = document.createElement("div");
-//     commentRightDiv.classList.add("comments__comment-right-div");
-
-//     //create upper right div
-
-//     const commentUpperDiv = document.createElement("div");
-//     commentUpperDiv.classList.add("comments__comment-upper-div");
-
-//     //create lower right div
-
-//     const commentLowerDiv = document.createElement("div");
-//     commentLowerDiv.classList.add("comments__comment-lower-div");
-
-//     //create li to hold each comment
-
-//     const commentListItem = document.createElement("div");
-//     commentListItem.classList.add("comments__comment-list-item");
-
-//     //append elements to inner divs
-
-//     commentLowerDiv.appendChild(commentText);
-//     commentUpperDiv.appendChild(commenterName);
-//     commentUpperDiv.appendChild(commentDate);
-
-//     commentRightDiv.appendChild(commentUpperDiv);
-//     commentRightDiv.appendChild(commentLowerDiv);
-
-//     commentLeftDiv.appendChild(commenterImage);
-
-//     //append left and right divs to comment list item
-//     commentListItem.appendChild(commentLeftDiv);
-//     commentListItem.appendChild(commentRightDiv);
-
-//     //append list item to ul
-
-//     commentsUL.appendChild(commentListItem);
-//   }
-// }
-// displayComments();
