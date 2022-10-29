@@ -3,7 +3,6 @@ const apiKey = "f5e438b2-2b7c-4b5c-b49a-b70c5fd889d5";
 //Get time
 function getElapsedTime(commentTime, timeNow) {
   let elapsed = timeNow - commentTime;
-  // let elapsed = 5000000000;
   const elapsedSeconds = Math.round(elapsed / 1000);
   const elapsedMinutes = Math.round(elapsedSeconds / 60);
   const elapsedHours = Math.round(elapsedMinutes / 60);
@@ -48,7 +47,7 @@ function displayComments(array) {
     const commenterImage = document.createElement("img");
     commenterImage.classList.add("comments__commenter-image");
 
-    //check this later//
+    //check for undefined image//
     if (array[i].image === undefined) {
       commenterImage.classList.add("comments__commenter-image--undefined");
     } else {
@@ -56,14 +55,37 @@ function displayComments(array) {
     }
 
     //create delete button
-    const deleteButton = document.createElement("p");
+    const deleteButton = document.createElement("img");
     deleteButton.classList.add("comments__delete-button");
-    deleteButton.id = array[i].id;
-    deleteButton.innerText = "Delete";
+    deleteButton.src = "../assets/Icons/SVG/icon-delete.svg";
+    deleteButton.addEventListener("click", (event) => {
+      deleteComment(array[i].id);
+    });
+
+    //Create Like Button
+    const likeButton = document.createElement("img");
+    likeButton.classList.add("comments__like-button");
+    // likeButton.id = array[i].id;
+    likeButton.src = "../assets/Icons/SVG/icon-like.svg";
+    likeButton.addEventListener("click", (event) => {
+      likeComment(array[i].id);
+    });
+
+    //Create Like Counter
+    const likesCounter = document.createElement("p");
+    likesCounter.classList.add("comments__likes-counter");
+    likesCounter.id = array[i].id;
+    // if (array[i].likes > 0) {
+    likesCounter.innerText = array[i].likes;
+    // }
 
     //create left div
     const commentLeftDiv = document.createElement("div");
     commentLeftDiv.classList.add("comments__comment-left-div");
+
+    //Create likes and counter div
+    const commentlikesDiv = document.createElement("div");
+    commentlikesDiv.classList.add("comments__comment-likes-div");
 
     //create right div
 
@@ -88,14 +110,19 @@ function displayComments(array) {
     //append elements to inner divs
 
     commentLowerDiv.appendChild(commentText);
+    commentLowerDiv.appendChild(deleteButton);
     commentUpperDiv.appendChild(commenterName);
     commentUpperDiv.appendChild(commentDate);
 
     commentRightDiv.appendChild(commentUpperDiv);
     commentRightDiv.appendChild(commentLowerDiv);
 
+    commentlikesDiv.appendChild(likeButton);
+    commentlikesDiv.appendChild(likesCounter);
+
     commentLeftDiv.appendChild(commenterImage);
-    commentLeftDiv.appendChild(deleteButton);
+    commentLeftDiv.appendChild(commentlikesDiv);
+    // commentLeftDiv.appendChild(deleteButton);
 
     //append left and right divs to comment list item
     commentListItem.appendChild(commentLeftDiv);
@@ -107,31 +134,39 @@ function displayComments(array) {
   }
 }
 
+//
+
+//Like Comment Function------------------------------------
+function likeComment(id) {
+  axios
+    .put(
+      "https://project-1-api.herokuapp.com/comments/" +
+        id +
+        "/like?api_key=" +
+        apiKey
+    )
+    .then(() => getComments());
+}
+
 //Delete Comment Function----------------------------------
 
 function deleteComment(id) {
-  axios.delete(
-    "https://project-1-api.herokuapp.com/comments/" + id + "?api_key=" + apiKey
-  );
+  axios
+    .delete(
+      "https://project-1-api.herokuapp.com/comments/" +
+        id +
+        "?api_key=" +
+        apiKey
+    )
+    .then(() => getComments());
 }
-//Get Comments & Set Delete Functionality--------------------------------------------------
+//Get Comments--------------------------------------------------
 
 function getComments() {
   axios
     .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
     .then((response) => {
-      const commentsArray = response.data;
-      displayComments(commentsArray);
-    })
-    .then((response) => {
-      document
-        .querySelectorAll(".comments__delete-button")
-        .forEach((button) => {
-          button.addEventListener("click", (event) => {
-            console.log("dang");
-            deleteComment(button.id);
-          });
-        });
+      displayComments(response.data);
     });
 }
 getComments();
@@ -175,7 +210,6 @@ commentInput.addEventListener("focusout", (event) => {
 const commentForm = document.querySelector(".comments__form");
 commentForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("submit clicked");
 
   //If there are error classes. This will remove them. This goes before the if statements that handle errors because the return statements send us back to the start of the function.
 
@@ -217,54 +251,15 @@ commentForm.addEventListener("submit", (event) => {
     comment: event.target.comment.value,
   };
 
-  axios.post(
-    "https://project-1-api.herokuapp.com/comments?api_key=" + apiKey,
-    newComment
-  );
+  axios
+    .post(
+      "https://project-1-api.herokuapp.com/comments?api_key=" + apiKey,
+      newComment
+    )
+    .then(() => getComments());
 
   //Reset input fields back to placeholders.
-
-  function pushCommentsArray(object) {
-    axios
-      .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
-      .then((response) => {
-        const array = response.data;
-
-        array.push(object);
-      })
-
-      .then(getComments());
-  }
-
-  pushCommentsArray(newComment);
 
   nameInput.value = "";
   commentInput.value = "";
 });
-
-// //Delete Comment Function
-
-// function deleteComment(id) {
-//   axios.delete(
-//     "https://project-1-api.herokuapp.com/comments/" + id + "?api_key=" + apiKey
-//   );
-// }
-
-// let deleteButton = document
-//   .querySelectorAll(".comments__delete-button")
-//   .forEach((button) => {
-//     button.addEventListener("click", (event) => {
-//       console.log("dang");
-//       deleteComment(button.id);
-//     });
-//   });
-
-// let showListItem = document
-//       .querySelectorAll(".tickets__show-list-item")
-//       .forEach((li) => {
-//         li.addEventListener("mouseenter", (event) => {
-//           li.classList.add("tickets__show-list-item--hover");
-//         });
-//         li.addEventListener("mouseleave", (event) => {
-//           li.classList.remove("tickets__show-list-item--hover");
-//         });

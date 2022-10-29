@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: flex-start;
     @include desktop {
-      max-width: 1100px;
+      max-width: 68.75rem;
       margin: auto;
     }
   }
@@ -36,7 +36,7 @@
     font-size: $mobile-page-header;
     color: white;
     font-weight: 600;
-    margin-left: 16px;
+    margin-left: 1rem;
     @include tablet {
       margin-left: 2.5rem;
       font-size: $tablet-desktop-page-header;
@@ -54,13 +54,13 @@
     padding: 2.5rem;
   }
   @include desktop {
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
   &__title {
     font-size: $mobile-section-header;
     font-weight: 600;
-    margin-left: 16px;
+    margin-left: 1rem;
     margin-top: 1.875rem;
     color: $bandsite-black;
 
@@ -79,7 +79,7 @@
   }
   &__band-image {
     width: 100%;
-    padding: 16px;
+    padding: 1rem;
     @include tablet {
       padding: 0 3.75rem;
       clip-path: inset(2.5rem 0);
@@ -92,7 +92,7 @@
   &__quote {
     font-size: $mobile-sub-heading;
     font-weight: 600;
-    margin: 0 16px;
+    margin: 0 1rem;
     line-height: 1.7;
     @include tablet {
       margin: 0 3.75rem;
@@ -110,7 +110,7 @@
     font-size: $mobile-sub-heading;
     margin-bottom: 2rem;
     font-weight: 600;
-    margin: 0.75rem 16px;
+    margin: 0.75rem 1rem;
     line-height: 1.7;
     @include tablet {
       margin: 0.75rem 3.75rem;
@@ -122,7 +122,7 @@
     }
   }
   &__bio-title {
-    margin: 2rem 16px 0 16px;
+    margin: 2rem 1rem 0 1rem;
     font-size: $mobile-sub-heading;
     font-weight: 600;
     @include tablet {
@@ -139,7 +139,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 1.5rem 16px;
+    margin: 1.5rem 1rem;
     @include tablet {
       flex-direction: row;
       margin: 0 3.75rem;
@@ -169,13 +169,13 @@
   background-color: $alabaster;
   &__container {
     @include desktop {
-      max-width: 1100px;
+      max-width: 68.75rem;
       margin: auto;
     }
   }
 
   &__title {
-    padding: 16px;
+    padding: 1rem;
     font-size: $mobile-section-header;
     font-weight: 600;
     @include tablet {
@@ -187,8 +187,8 @@
   &__images-container {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    gap: 16px;
+    padding: 1rem;
+    gap: 1rem;
     @include tablet {
       flex-direction: row;
       flex-wrap: wrap;
@@ -222,12 +222,12 @@
 .comments {
   max-width: 100%;
   &__wrapper {
-    padding: 16px;
+    padding: 1rem;
     @include tablet {
-      padding: 40px;
+      padding: 2.5rem;
     }
     @include desktop {
-      max-width: 1100px;
+      max-width: 68.75rem;
       margin: auto;
     }
   }
@@ -237,17 +237,17 @@
 
     @include tablet {
       font-size: $tablet-desktop-section-header;
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
     }
   }
   &__form-container {
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
-    margin-top: 24px;
+    gap: 1rem;
+    margin-top: 1.5rem;
     border-bottom: 1px solid $mercury;
     @include tablet {
-      max-width: 700px;
+      max-width: 43.75rem;
       margin: auto;
     }
   }
@@ -261,17 +261,17 @@
     font-size: $mobile-labels-buttons;
     text-transform: uppercase;
     color: $silver;
-    margin-bottom: 4px;
-    margin-top: 10px;
+    margin-bottom: 0.25rem;
+    margin-top: 0.625rem;
     @include tablet {
       font-size: $tablet-desktop-labels-buttons;
     }
   }
   &__name-input {
-    padding: 12px;
+    padding: 0.75rem;
     border: none;
     outline: 1px solid $mercury;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     border-radius: 4px;
     background-color: $alabaster;
     &::placeholder {
@@ -288,11 +288,11 @@
     }
   }
   &__comment-input {
-    height: 100px;
-    padding: 12px;
+    height: 6.25rem;
+    padding: 0.75rem;
     border: none;
     outline: 1px solid $mercury;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     border-radius: 4px;
     background-color: $alabaster;
     resize: none;
@@ -315,34 +315,34 @@
     }
   }
   &__avatar-container {
-    padding-top: 25px;
+    padding-top: 1.5625rem;
   }
   &__avatar {
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     clip-path: circle(43%);
     @include tablet {
-      width: 52px;
-      height: 52px;
+      width: 3.25rem;
+      height: 3.25rem;
     }
   }
   &__submit-button {
     background-color: $bandsite-black;
     color: white;
     border: none;
-    border-radius: 4px;
-    height: 40px;
+    border-radius: 0.25rem;
+    height: 2.5rem;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 10px 0;
-    font-size: 15px;
+    margin: 0.625rem 0;
+    font-size: 0.9375rem;
     &:hover {
       background-color: black;
     }
     @include tablet {
-      width: 150px;
-      margin: 20px 0;
+      width: 9.375rem;
+      margin: 1.25rem 0;
       margin-left: auto;
     }
   }
@@ -354,45 +354,73 @@
     display: flex;
     flex-direction: column-reverse;
     @include tablet {
-      max-width: 700px;
+      max-width: 43.75rem;
       margin: auto;
     }
   }
   &__comment-list-item {
     display: flex;
-    gap: 16px;
-    padding: 14px 0;
+    gap: 1rem;
+    padding: 0.875rem 0;
     border-bottom: 1px solid $mercury;
+    // position: relative;
     @include tablet {
-      padding: 20px 0;
+      padding: 1.25rem 0;
     }
   }
   &__comment-left-div {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.3125rem;
   }
   &__commenter-image {
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     clip-path: circle(43%);
     @include tablet {
-      width: 52px;
-      height: 52px;
+      width: 3.25rem;
+      height: 3.25rem;
     }
   }
   &__commenter-image--undefined {
     background-color: $mercury;
   }
 
-  &__delete-button {
+  &__like-button {
+    max-width: 1.0625rem;
     &:hover {
       cursor: pointer;
+    }
+  }
+  &__comment-likes-div {
+    width: 100%;
+    padding: 0.25rem 0.125rem;
+    display: flex;
+    flex-direction: row;
+    // margin-top: 5px;
+    justify-content: space-between;
+  }
+  &__likes-counter {
+    font-weight: 600;
+    font-size: 0.9rem;
+    @include tablet {
+      font-size: $tablet-desktop-body-copy;
     }
   }
   &__comment-right-div {
     flex: 1;
     overflow: hidden;
+  }
+  &__delete-button {
+    max-width: 0.9375rem;
+    margin: 1.25rem 0 0.625rem 0.625rem;
+    margin-right: 0;
+    // position: absolute;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__comment-upper-div {
@@ -416,7 +444,11 @@
   }
 
   &__comment-lower-div {
-    padding-top: 5px;
+    padding-top: 0.3125rem;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
   }
   &__comment-text {
     font-size: $mobile-body-copy;

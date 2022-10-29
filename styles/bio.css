@@ -47,7 +47,7 @@
 }
 @media screen and (min-width: 1280px) {
   .header__wrapper {
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
 }
@@ -58,7 +58,7 @@
   }
 }
 .header__logo {
-  width: 120px;
+  width: 7.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -121,7 +121,7 @@
 /*-------------------Footer--------------------*/
 .footer {
   background-color: #323232;
-  padding: 24px 16px;
+  padding: 1.5rem 1rem;
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -140,7 +140,7 @@
 @media screen and (min-width: 1280px) {
   .footer__wrapper {
     padding: 1.875rem 2.5rem 2.5rem 2.5rem;
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
 }
@@ -160,12 +160,12 @@
 .footer__socials-container {
   flex: 1;
   width: 100%;
-  padding-top: 8px;
+  padding-top: 0.5rem;
   display: flex;
   justify-content: flex-start;
   gap: 1.875rem;
   position: absolute;
-  top: 40px;
+  top: 2.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__socials-container {
@@ -174,7 +174,7 @@
   }
 }
 .footer__socials-icon {
-  height: 24px;
+  height: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__socials-icon {
@@ -242,7 +242,7 @@
 .footer__copyright {
   color: white;
   font-weight: 400;
-  font-size: 11px;
+  font-size: 0.6875rem;
   padding-top: 4.375rem;
 }
 @media screen and (min-width: 768px) {
@@ -262,8 +262,8 @@
 }
 .footer__logo {
   position: absolute;
-  top: 310px;
-  width: 120px;
+  top: 19.375rem;
+  width: 7.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__logo {
@@ -274,7 +274,7 @@
     right: 0px;
     top: 0px;
     width: 7.5rem;
-    margin-right: 20px;
+    margin-right: 1.25rem;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -282,7 +282,7 @@
     position: absolute;
     right: 1.25rem;
     top: 1.875rem;
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
 }
 
@@ -315,7 +315,7 @@
 }
 @media screen and (min-width: 1280px) {
   .hero__wrapper {
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
 }
@@ -323,7 +323,7 @@
   font-size: 1.5rem;
   color: white;
   font-weight: 600;
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
@@ -345,14 +345,14 @@
 }
 @media screen and (min-width: 1280px) {
   .info {
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
 }
 .info__title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 16px;
+  margin-left: 1rem;
   margin-top: 1.875rem;
   color: #323232;
 }
@@ -374,7 +374,7 @@
 }
 .info__band-image {
   width: 100%;
-  padding: 16px;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .info__band-image {
@@ -393,7 +393,7 @@
 .info__quote {
   font-size: 0.875rem;
   font-weight: 600;
-  margin: 0 16px;
+  margin: 0 1rem;
   line-height: 1.7;
 }
 @media screen and (min-width: 768px) {
@@ -415,7 +415,7 @@
   font-size: 0.875rem;
   margin-bottom: 2rem;
   font-weight: 600;
-  margin: 0.75rem 16px;
+  margin: 0.75rem 1rem;
   line-height: 1.7;
 }
 @media screen and (min-width: 768px) {
@@ -431,7 +431,7 @@
   }
 }
 .info__bio-title {
-  margin: 2rem 16px 0 16px;
+  margin: 2rem 1rem 0 1rem;
   font-size: 0.875rem;
   font-weight: 600;
 }
@@ -451,7 +451,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 1.5rem 16px;
+  margin: 1.5rem 1rem;
 }
 @media screen and (min-width: 768px) {
   .info__bio-container {
@@ -485,12 +485,12 @@
 }
 @media screen and (min-width: 1280px) {
   .photos__container {
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
 }
 .photos__title {
-  padding: 16px;
+  padding: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -504,8 +504,8 @@
 .photos__images-container {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 16px;
+  padding: 1rem;
+  gap: 1rem;
 }
 @media screen and (min-width: 768px) {
   .photos__images-container {
@@ -543,16 +543,16 @@
   max-width: 100%;
 }
 .comments__wrapper {
-  padding: 16px;
+  padding: 1rem;
 }
 @media screen and (min-width: 768px) {
   .comments__wrapper {
-    padding: 40px;
+    padding: 2.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .comments__wrapper {
-    max-width: 1100px;
+    max-width: 68.75rem;
     margin: auto;
   }
 }
@@ -563,19 +563,19 @@
 @media screen and (min-width: 768px) {
   .comments__title {
     font-size: 2.25rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 }
 .comments__form-container {
   display: flex;
   justify-content: flex-end;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 1rem;
+  margin-top: 1.5rem;
   border-bottom: 1px solid #e1e1e1;
 }
 @media screen and (min-width: 768px) {
   .comments__form-container {
-    max-width: 700px;
+    max-width: 43.75rem;
     margin: auto;
   }
 }
@@ -588,8 +588,8 @@
   font-size: 0.625rem;
   text-transform: uppercase;
   color: #afafaf;
-  margin-bottom: 4px;
-  margin-top: 10px;
+  margin-bottom: 0.25rem;
+  margin-top: 0.625rem;
 }
 @media screen and (min-width: 768px) {
   .comments__form-label {
@@ -597,10 +597,10 @@
   }
 }
 .comments__name-input {
-  padding: 12px;
+  padding: 0.75rem;
   border: none;
   outline: 1px solid #e1e1e1;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   border-radius: 4px;
   background-color: #fafafa;
 }
@@ -629,11 +629,11 @@
   color: #d22d2d;
 }
 .comments__comment-input {
-  height: 100px;
-  padding: 12px;
+  height: 6.25rem;
+  padding: 0.75rem;
   border: none;
   outline: 1px solid #e1e1e1;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   border-radius: 4px;
   background-color: #fafafa;
   resize: none;
@@ -671,39 +671,39 @@
   }
 }
 .comments__avatar-container {
-  padding-top: 25px;
+  padding-top: 1.5625rem;
 }
 .comments__avatar {
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
   -webkit-clip-path: circle(43%);
           clip-path: circle(43%);
 }
 @media screen and (min-width: 768px) {
   .comments__avatar {
-    width: 52px;
-    height: 52px;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }
 .comments__submit-button {
   background-color: #323232;
   color: white;
   border: none;
-  border-radius: 4px;
-  height: 40px;
+  border-radius: 0.25rem;
+  height: 2.5rem;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
-  font-size: 15px;
+  margin: 0.625rem 0;
+  font-size: 0.9375rem;
 }
 .comments__submit-button:hover {
   background-color: black;
 }
 @media screen and (min-width: 768px) {
   .comments__submit-button {
-    width: 150px;
-    margin: 20px 0;
+    width: 9.375rem;
+    margin: 1.25rem 0;
     margin-left: auto;
   }
 }
@@ -714,47 +714,76 @@
 }
 @media screen and (min-width: 768px) {
   .comments__list {
-    max-width: 700px;
+    max-width: 43.75rem;
     margin: auto;
   }
 }
 .comments__comment-list-item {
   display: flex;
-  gap: 16px;
-  padding: 14px 0;
+  gap: 1rem;
+  padding: 0.875rem 0;
   border-bottom: 1px solid #e1e1e1;
 }
 @media screen and (min-width: 768px) {
   .comments__comment-list-item {
-    padding: 20px 0;
+    padding: 1.25rem 0;
   }
 }
 .comments__comment-left-div {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3125rem;
 }
 .comments__commenter-image {
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
   -webkit-clip-path: circle(43%);
           clip-path: circle(43%);
 }
 @media screen and (min-width: 768px) {
   .comments__commenter-image {
-    width: 52px;
-    height: 52px;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }
 .comments__commenter-image--undefined {
   background-color: #e1e1e1;
 }
-.comments__delete-button:hover {
+.comments__like-button {
+  max-width: 1.0625rem;
+}
+.comments__like-button:hover {
   cursor: pointer;
+}
+.comments__comment-likes-div {
+  width: 100%;
+  padding: 0.25rem 0.125rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comments__likes-counter {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__likes-counter {
+    font-size: 0.875rem;
+  }
 }
 .comments__comment-right-div {
   flex: 1;
   overflow: hidden;
+}
+.comments__delete-button {
+  max-width: 0.9375rem;
+  margin: 1.25rem 0 0.625rem 0.625rem;
+  margin-right: 0;
+}
+.comments__delete-button:hover {
+  cursor: pointer;
 }
 .comments__comment-upper-div {
   display: flex;
@@ -780,7 +809,11 @@
   }
 }
 .comments__comment-lower-div {
-  padding-top: 5px;
+  padding-top: 0.3125rem;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
 }
 .comments__comment-text {
   font-size: 0.8125rem;

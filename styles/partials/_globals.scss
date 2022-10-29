@@ -23,7 +23,7 @@
       justify-content: flex-start;
     }
     @include desktop {
-      max-width: 1100px;
+      max-width: 68.75rem;
       margin: auto;
     }
   }
@@ -35,7 +35,7 @@
   }
 
   &__logo {
-    width: 120px;
+    width: 7.5rem;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
     @include tablet {
@@ -94,7 +94,7 @@
 
 .footer {
   background-color: $bandsite-black;
-  padding: 24px 16px;
+  padding: 1.5rem 1rem;
   // position: relative;
   max-width: 100%;
   @include tablet {
@@ -109,7 +109,7 @@
     }
     @include desktop {
       padding: 1.875rem 2.5rem 2.5rem 2.5rem;
-      max-width: 1100px;
+      max-width: 68.75rem;
       margin: auto;
     }
   }
@@ -128,19 +128,19 @@
   &__socials-container {
     flex: 1;
     width: 100%;
-    padding-top: 8px;
+    padding-top: 0.5rem;
     display: flex;
     justify-content: flex-start;
     gap: 1.875rem;
     position: absolute;
-    top: 40px;
+    top: 2.5rem;
     @include tablet {
       position: relative;
       top: 0px;
     }
   }
   &__socials-icon {
-    height: 24px;
+    height: 1.5rem;
     @include tablet {
       height: 1.5625rem;
     }
@@ -199,7 +199,7 @@
   &__copyright {
     color: white;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 0.6875rem;
     padding-top: 4.375rem;
     @include tablet {
       font-size: $tablet-desktop-footer-copy;
@@ -218,8 +218,8 @@
   }
   &__logo {
     position: absolute;
-    top: 310px;
-    width: 120px;
+    top: 19.375rem;
+    width: 7.5rem;
 
     @include tablet {
       margin-left: auto;
@@ -229,13 +229,13 @@
       right: 0px;
       top: 0px;
       width: 7.5rem;
-      margin-right: 20px;
+      margin-right: 1.25rem;
     }
     @include desktop {
       position: absolute;
       right: 1.25rem;
       top: 1.875rem;
-      margin-right: 10px;
+      margin-right: 0.625rem;
     }
   }
 }
