@@ -70,8 +70,6 @@ function displayShows(array) {
     showLI.appendChild(location);
     showLI.appendChild(buyTicketsButton);
 
-    //append li to container which was passed in as parameter
-
     showsList.appendChild(showLI);
   }
 }
@@ -84,5 +82,3 @@ function addShows() {
 }
 
 addShows();
-
-//Add hover and select events
