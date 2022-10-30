@@ -407,7 +407,6 @@
   &__likes-counter {
     font-weight: 600;
     font-size: 0.9rem;
-    margin-top: 0.1875rem;
     @include tablet {
       font-size: $tablet-desktop-body-copy;
     }
