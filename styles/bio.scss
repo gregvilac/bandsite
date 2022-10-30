@@ -337,6 +337,7 @@
     font-weight: 600;
     margin: 0.625rem 0;
     font-size: 0.9375rem;
+    cursor: pointer;
     &:hover {
       background-color: black;
     }
@@ -363,7 +364,7 @@
     gap: 1rem;
     padding: 0.875rem 0;
     border-bottom: 1px solid $mercury;
-    // position: relative;
+
     @include tablet {
       padding: 1.25rem 0;
     }
@@ -390,6 +391,7 @@
 
   &__like-button {
     max-width: 1.0625rem;
+
     &:hover {
       cursor: pointer;
     }
@@ -399,12 +401,13 @@
     padding: 0.25rem 0.125rem;
     display: flex;
     flex-direction: row;
-    // margin-top: 5px;
+
     justify-content: space-between;
   }
   &__likes-counter {
     font-weight: 600;
     font-size: 0.9rem;
+    margin-top: 0.1875rem;
     @include tablet {
       font-size: $tablet-desktop-body-copy;
     }
@@ -417,7 +420,6 @@
     max-width: 0.9375rem;
     margin: 1.25rem 0 0.625rem 0.625rem;
     margin-right: 0;
-    // position: absolute;
     &:hover {
       cursor: pointer;
     }

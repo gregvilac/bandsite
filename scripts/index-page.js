@@ -57,7 +57,8 @@ function displayComments(array) {
     //create delete button
     const deleteButton = document.createElement("img");
     deleteButton.classList.add("comments__delete-button");
-    deleteButton.src = "../assets/Icons/SVG/icon-delete.svg";
+    deleteButton.src = "./assets/Icons/SVG/icon-delete.svg";
+    deleteButton.alt = "delete comment button";
     deleteButton.addEventListener("click", (event) => {
       deleteComment(array[i].id);
     });
@@ -65,8 +66,8 @@ function displayComments(array) {
     //Create Like Button
     const likeButton = document.createElement("img");
     likeButton.classList.add("comments__like-button");
-    // likeButton.id = array[i].id;
-    likeButton.src = "../assets/Icons/SVG/icon-like.svg";
+    likeButton.src = "./assets/Icons/SVG/icon-like.svg";
+    likeButton.alt = "like comment button";
     likeButton.addEventListener("click", (event) => {
       likeComment(array[i].id);
     });
@@ -133,8 +134,6 @@ function displayComments(array) {
     commentsUL.appendChild(commentListItem);
   }
 }
-
-//
 
 //Like Comment Function------------------------------------
 function likeComment(id) {

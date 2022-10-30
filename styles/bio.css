@@ -696,6 +696,7 @@
   font-weight: 600;
   margin: 0.625rem 0;
   font-size: 0.9375rem;
+  cursor: pointer;
 }
 .comments__submit-button:hover {
   background-color: black;
@@ -767,6 +768,7 @@
 .comments__likes-counter {
   font-weight: 600;
   font-size: 0.9rem;
+  margin-top: 0.1875rem;
 }
 @media screen and (min-width: 768px) {
   .comments__likes-counter {
